@@ -11,6 +11,16 @@ function Header() {
     const arrow = {
         color: "white", fontSize: ".8em"
     }
+    const [checked, setChecked] = useState('light')
+    const handleChange = (event) => {
+        setChecked(event.target.value);
+    };
+
+    const [lang, setLang] = useState('vie')
+    const handleLang = (e) => {
+        setLang(e.target.value)
+    }
+
     const [showlist, setShowlist] = useState(false)
     const toggleshowlist = () => {
         if (showlist == false) {
@@ -18,7 +28,6 @@ function Header() {
         } else {
             setShowlist(false)
         }
-        console.log(showlist);
     }
     const Accountdropdown = () => {
         return (
@@ -29,11 +38,21 @@ function Header() {
                             <h5>Giao diện</h5>
                             <div className='setting-pane'>
                                 <div className='setting-option'>
-                                    <input type='radio' />
+                                    <input type='radio'
+                                        name='radio_theme'
+                                        value='light'
+                                        checked={checked === 'light'}
+                                        onChange={handleChange}
+                                    />
                                     <span>Sáng</span>
                                 </div>
                                 <div className='setting-option'>
-                                    <input type='radio' />
+                                    <input type='radio'
+                                        name='radio_theme'
+                                        value='dark'
+                                        checked={checked === 'dark'}
+                                        onChange={handleChange}
+                                    />
                                     <span>Tối</span>
                                 </div>
                             </div>
@@ -44,11 +63,21 @@ function Header() {
                             <h5>Ngôn ngữ</h5>
                             <div className='setting-pane'>
                                 <div className='setting-option'>
-                                    <input type='radio' />
-                                    <span>Việt Nam</span>
+                                    <input type='radio'
+                                        name='radio_lang'
+                                        value='vie'
+                                        checked={lang === 'vie'}
+                                        onChange={handleLang}
+                                    />
+                                    <span>Tiếng Việt</span>
                                 </div>
                                 <div className='setting-option'>
-                                    <input type='radio' />
+                                    <input type='radio'
+                                        name='radio_lang'
+                                        value='eng'
+                                        checked={lang === 'eng'}
+                                        onChange={handleLang}
+                                    />
                                     <span>Tiếng Anh</span>
                                 </div>
                             </div>
