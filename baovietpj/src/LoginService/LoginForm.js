@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
-import {useDispatch} from 'react-redux' ;
-import {Loginredux} from '../Redux/Actions/action'
 
 function LoginForm({ Login, error }) {
     const [details, setDetails] = useState({ usernumber: "001C", password: "" });
@@ -11,7 +9,6 @@ function LoginForm({ Login, error }) {
         accountinput.current.focus();
     }, [])
 
-    const dispatch = useDispatch();
     const submitHandler = (e) => {
         e.preventDefault();
         Login(details);

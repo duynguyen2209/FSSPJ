@@ -11,7 +11,7 @@ const loginReducer = ( state = initialSate, action) => {
         case LOG_IN:
             return{
                 ...state,
-                username: action.payload
+                isLogin: action.payload
             } 
         default:
              return state;
