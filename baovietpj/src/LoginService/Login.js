@@ -17,13 +17,11 @@ function Login() {
     function Login(details) {
         const checkuser = users.find(user => (user.usernumber === details.usernumber && user.password === details.password));
         if (checkuser) {
-            localStorage.setItem("isLogin",true)
             toHome();
             dispatch(Loginredux({
                 isLogin: true
             })) 
         } else {
-            localStorage.setItem("isLogin",false)
             setError("Fail")
         }
     }
