@@ -19,8 +19,6 @@ function Login() {
         if (checkuser) {
             handledStory();
             dispatch(Loginredux({
-                username:details.usernumber,
-                password:details.password,
                 isLogin: true
             })) 
         } else {

@@ -1,8 +1,6 @@
 import {LOG_IN} from '../../const/index'
 const initialSate = {
-    user: {
-        username: '',
-        password: '',
+    Login: {
         isLogin: false
     }
 }
