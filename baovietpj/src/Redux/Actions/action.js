@@ -1,10 +1,8 @@
-export const SWITCH_THEME = 'SWITCH_THEME';
+import { LOG_IN } from "../../const"
 
-export const switchtheme = theme => {
-    return(dispatch) => {
-        dispatch({
-            type: 'SWITCH_THEME',
-            theme:theme,
-        });
-    };
-};
+export const Loginredux = (data) => {
+    return{
+        type: LOG_IN,
+        payload:data
+    }
+}

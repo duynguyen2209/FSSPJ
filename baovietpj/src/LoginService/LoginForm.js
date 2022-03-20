@@ -1,16 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
+import {useDispatch} from 'react-redux' ;
+import {Loginredux} from '../Redux/Actions/action'
+
 function LoginForm({ Login, error }) {
     const [details, setDetails] = useState({ usernumber: "001C", password: "" });
     const accountinput = useRef(null);
+    useEffect(() => {
+        accountinput.current.focus();
+    }, [])
+
+    const dispatch = useDispatch();
     const submitHandler = (e) => {
         e.preventDefault();
         Login(details);
     }
-    useEffect(() => {
-        accountinput.current.focus();
-    }, [])
+
     return (
         <div>
             <form onSubmit={submitHandler} >

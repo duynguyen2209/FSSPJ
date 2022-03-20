@@ -1,19 +1,23 @@
-import { lightheme } from "../../Theme";
-import { SWITCH_THEME } from "../Actions/actionTheme";
-
-const initialState = {
-    theme: lightheme
-}
-
-const themeReducer = (state = initialState ,action) => {
-    switch(action.type){
-        case SWITCH_THEME:
-            return {
-                theme: action.theme
-            }
-        default: 
-            return state;
+import {LOG_IN} from '../../const/index'
+const initialSate = {
+    user: {
+        username: '',
+        password: '',
+        isLogin: false
     }
 }
 
-export default themeReducer;
+const loginReducer = ( state = initialSate, action) => {
+    console.log(state, action);
+    switch(action.type){
+        case LOG_IN:
+            return{
+                ...state,
+                username: action.payload
+            } 
+        default:
+             return state;
+    }
+}
+
+export default loginReducer;
