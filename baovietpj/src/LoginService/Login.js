@@ -7,7 +7,7 @@ import {Loginredux} from '../Redux/Actions/action'
 import './Login.css';
 function Login() {
     const navigate = useNavigate();
-    const handledStory = () => {
+    const toHome = () => {
         navigate('/Home')
     }
     const dispatch = useDispatch();
@@ -17,11 +17,13 @@ function Login() {
     function Login(details) {
         const checkuser = users.find(user => (user.usernumber === details.usernumber && user.password === details.password));
         if (checkuser) {
-            handledStory();
+            localStorage.setItem("isLogin",true)
+            toHome();
             dispatch(Loginredux({
                 isLogin: true
             })) 
         } else {
+            localStorage.setItem("isLogin",false)
             setError("Fail")
         }
     }

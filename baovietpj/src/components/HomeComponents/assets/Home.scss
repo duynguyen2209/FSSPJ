@@ -25,6 +25,7 @@
             border: none;
             outline: none;
             cursor: pointer;
+            padding: 4px;
         }
         .wrap{
             .toggle-info:hover{
@@ -41,7 +42,7 @@
             position: absolute;
             border-right: 1px solid #2c2525;
             height: 40px;
-            right: 60px;
+            right: 65px;
             transform: translateY(-74%);
         } 
     }
@@ -72,6 +73,7 @@
             border: none;
             outline: none;
             cursor: pointer; 
+            padding: 4px;
         }
         .wrap{
             .toggle-info:hover{
@@ -88,7 +90,7 @@
             position: absolute;
             border-right: 1px solid #17457b;
             height: 40px;
-            right: 60px;
+            right: 65px;
             transform: translateY(-74%);
         } 
     }
@@ -119,6 +121,7 @@
     background: none;
     border: none;
     outline: none;
+    padding: 5px;
 }
 
 
