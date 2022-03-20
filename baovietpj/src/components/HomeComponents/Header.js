@@ -4,6 +4,7 @@ import './Header.css';
 import { Link } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
 import { BiDownArrow } from 'react-icons/bi'
+
 function Header() {
     const profileicon = {
         color: "white", fontSize: "1.2em"
@@ -11,7 +12,7 @@ function Header() {
     const arrow = {
         color: "white", fontSize: ".8em"
     }
-    const [checked, setChecked] = useState('light')
+    const [checked, setChecked] = useState('dark')
     const handleChange = (event) => {
         setChecked(event.target.value);
     };
@@ -87,11 +88,10 @@ function Header() {
             </div>
         )
     }
-
     return (
         <div>
             <header>
-                <div className='header__honme '>
+                <div className={checked === 'light' ? 'header__home-light' : 'header__home-dark'}>
                     <img className='logo_header' src={logo_header} />
                     <div className='log-in'>
                         <Link to="/"><button className='log-in-btn'>Đăng xuất</button></Link>

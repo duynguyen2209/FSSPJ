@@ -1,11 +1,21 @@
 /* Headerr */
 
-.header__honme {
+.header__home-dark {
     background-color: #3c3c3cf2;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: 0.4s;
 }
+
+.header__home-light {
+    background-color: #236abb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.4s;
+}
+
 
 .logo_header {
     cursor: url(../../stlye/img/cursor_home.png), auto;
@@ -88,4 +98,14 @@
 
 .setting-option input[type="radio"]{
     margin-right: 6px;
+}
+
+.log-in-btn::after{
+    content: "";
+    display: block;
+    position: absolute;
+    border-right: 2px solid #2c2525;
+    height: 40px;
+    right: 60px;
+    transform: translateY(-74%);
 }
