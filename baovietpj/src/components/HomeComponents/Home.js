@@ -28,9 +28,9 @@ function Home() {
   const [checked, setChecked] = useState('dark')
   const handleChangeTheme = (event) => {
     setChecked(event.target.value);
-    dispatch(SwitchTheme({
-      themeMode:event.target.value
-    }))
+    dispatch(SwitchTheme(
+      event.target.value
+    ))
   };
 
   const [lang, setLang] = useState('vie')

@@ -1,16 +1,16 @@
 import { LOG_IN,LOG_OUT,SWITCH_THEME } from "../../const"
 
-export const Loginredux = (boolean) => {
+export const Loginredux = (data,) => {
     return{
         type: LOG_IN,
-        payload:boolean
+        payload:data
     }
 }
 
-export const Logoutredux = (text) => {
+export const Logoutredux = (data) => {
     return{
         type: LOG_OUT,
-        payload: text
+        payload: data
     }
 }
 

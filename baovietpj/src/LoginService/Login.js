@@ -13,18 +13,14 @@ function Login() {
     const dispatch = useDispatch();
 
     const [error, setError] = useState("");
-    const [checklogin,setChecklogin] = useState(false)
     function Login(details) {
         const checkuser = users.find(user => (user.usernumber === details.usernumber && user.password === details.password));
         if (checkuser) {
             toHome();
-            setChecklogin(true)
-            console.log(checklogin);
             dispatch(
                 Loginredux(true)
             ) 
         } else {
-            setChecklogin(false)
             setError("Fail")
         }
     }

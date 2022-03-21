@@ -1,7 +1,7 @@
 import {LOG_IN, LOG_OUT, SWITCH_THEME} from '../../const/index'
 const initialSate = {
     Login: {
-        isLogin: false,
+        isLogin: false
 },
     Theme:{
         themeMode: 'dark'
@@ -9,9 +9,10 @@ const initialSate = {
 }
 
 
+
+
 const loginReducer = ( state = initialSate, action) => {
     console.log(state, action);
-    
     switch(action.type){
         case LOG_IN:
             return{
@@ -37,15 +38,3 @@ const loginReducer = ( state = initialSate, action) => {
 export default loginReducer;
 
 
-export const themeReducer = ( state = initialSate, action) => {
-    switch(action.type){
-        case SWITCH_THEME:
-            return{
-                ...state,
-                Theme:{
-                    ...state,
-                    themeMode:action.payload
-                }
-            }
-    }
-}
