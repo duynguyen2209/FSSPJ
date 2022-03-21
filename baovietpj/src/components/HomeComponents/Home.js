@@ -29,7 +29,6 @@ function Home() {
   const time = current.toLocaleTimeString();
 
   const themeMode = useSelector((state) => state.Theme.themeMode)
-  console.log(themeMode);
   const [checked, setChecked] = useState(themeMode)
   const handleChangeTheme = (event) => {
     setChecked(event.target.value);
@@ -42,7 +41,9 @@ function Home() {
   const [lang, setLang] = useState(langMode)
   const handleLang = (e) => {
     setLang(e.target.value)
-    dispatch(SwitchLang(lang  ))
+    dispatch(SwitchLang(
+      e.target.value
+      ))
   }
 
   const dispatch = useDispatch();

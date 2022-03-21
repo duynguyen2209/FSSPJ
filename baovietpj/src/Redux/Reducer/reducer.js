@@ -12,9 +12,6 @@ const initialSate = {
 
 }
 
-
-
-
 const Reducer = (state = initialSate, action) => {
     console.log(state, action);
     switch (action.type) {
@@ -45,9 +42,9 @@ const Reducer = (state = initialSate, action) => {
         case CHANGE_LANG:
             return{
                 ...state,
-                Lang:{
-                    ...state,
-                    langis:action.payload
+                Lang: {
+                    ...state.Lang,
+                    langis: action.payload
                 }
             }
         default:
