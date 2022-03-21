@@ -1,48 +1,60 @@
-import {LOG_IN, LOG_OUT, SWITCH_THEME} from '../../const/index'
+import { LOG_IN, LOG_OUT, SWITCH_THEME,CHANGE_LANG } from '../../const/index'
 const initialSate = {
     Login: {
         isLogin: false
-},
-    Theme:{
+    },
+    Theme: {
         themeMode: 'dark'
+    },
+    Lang:{
+        langis:'vie'
     }
+
 }
 
 
 
 
-const loginReducer = ( state = initialSate, action) => {
+const Reducer = (state = initialSate, action) => {
     console.log(state, action);
-    switch(action.type){
+    switch (action.type) {
         case LOG_IN:
-            return{
+            return {
                 ...state,
-                Login:{
+                Login: {
                     ...state.Login,
-                    isLogin:action.payload,
+                    isLogin: action.payload,
                 }
-            } 
+            }
         case LOG_OUT:
-            return{
+            return {
                 ...state,
-                Login:{
+                Login: {
                     ...state.Login,
-                    isLogin:action.payload,
+                    isLogin: action.payload,
                 }
-            }    
+            }
         case SWITCH_THEME:
+            return {
+                ...state,
+                Theme: {
+                    ...state.Theme,
+                    themeMode: action.payload
+                }
+            }
+        case CHANGE_LANG:
             return{
                 ...state,
-                Theme:{
-                    ...state.Theme,
-                    themeMode:action.payload
+                Lang:{
+                    ...state,
+                    langis:action.payload
                 }
-            }    
+            }
         default:
-             return state;
+            return state;
     }
 }
 
-export default loginReducer;
+export default Reducer;
 
 

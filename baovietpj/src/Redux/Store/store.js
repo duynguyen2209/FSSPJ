@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux'
-import loginReducer from '../Reducer/reducer';
+import Reducer from '../Reducer/reducer';
 // import {themeReducer} from '../Reducer/reducer'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import { persistStore, persistReducer } from 'redux-persist';
@@ -13,7 +13,7 @@ const persistConfig = {
 };
 
 
-const persitedReducer = persistReducer(persistConfig, loginReducer);
+const persitedReducer = persistReducer(persistConfig, Reducer);
 const store = createStore(persitedReducer,composeEnhancers);
 
 export const persistor = persistStore(store);

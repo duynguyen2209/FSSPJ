@@ -3,7 +3,7 @@ import logo_header from '../../stlye/img/logo_header.png'
 import '../HomeComponents/assets/Home.scss';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Logoutredux, SwitchTheme } from '../../Redux/Actions/action';
+import { Logoutredux, SwitchTheme,SwitchLang } from '../../Redux/Actions/action';
 import { ImClock } from 'react-icons/im';
 import { CgProfile } from 'react-icons/cg';
 import { BiDownArrow } from 'react-icons/bi';
@@ -38,9 +38,11 @@ function Home() {
     ))
   };
 
-  const [lang, setLang] = useState('vie')
+  const langMode = useSelector((state) => state.Lang.langis)
+  const [lang, setLang] = useState(langMode)
   const handleLang = (e) => {
     setLang(e.target.value)
+    dispatch(SwitchLang(lang  ))
   }
 
   const dispatch = useDispatch();
