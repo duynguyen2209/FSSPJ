@@ -29,7 +29,15 @@ const loginReducer = ( state = initialSate, action) => {
                     ...state.Login,
                     isLogin:action.payload,
                 }
-            }        
+            }    
+        case SWITCH_THEME:
+            return{
+                ...state,
+                Theme:{
+                    ...state.Theme,
+                    themeMode:action.payload
+                }
+            }    
         default:
              return state;
     }

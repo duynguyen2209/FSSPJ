@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import logo_header from '../../stlye/img/logo_header.png'
 import '../HomeComponents/assets/Home.scss';
 import { Link } from 'react-router-dom';
-import {useDispatch} from 'react-redux' ;
+import {useDispatch, useSelector} from 'react-redux' ;
 import { Logoutredux, SwitchTheme } from '../../Redux/Actions/action';
 import { ImClock } from 'react-icons/im';
 import { CgProfile } from 'react-icons/cg';
@@ -25,7 +25,9 @@ function Home() {
   const date = current.toLocaleDateString();
   const time = current.toLocaleTimeString( );
 
-  const [checked, setChecked] = useState('dark')
+  const themeMode = useSelector((state) => state.Theme.themeMode)
+  console.log(themeMode);
+  const [checked, setChecked] = useState(themeMode)
   const handleChangeTheme = (event) => {
     setChecked(event.target.value);
     dispatch(SwitchTheme(
@@ -123,7 +125,7 @@ function Home() {
             <span>&nbsp;</span>
             <span >{time}</span>
           </div>
-          <marquee className='moving-band'>
+          <marquee className='moving-band' >
             <p className='marquee-header'>
               <span className='marquee-item'>GT thoả thuận: </span>
               <span className='marquee-item'>141.25 tỷ</span>
