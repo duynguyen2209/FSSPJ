@@ -19,7 +19,8 @@ function Login() {
         if (checkuser) {
             toHome();
             dispatch(Loginredux({
-                isLogin: true
+                isLogin: true,
+                usernumber:details.usernumber
             })) 
         } else {
             setError("Fail")

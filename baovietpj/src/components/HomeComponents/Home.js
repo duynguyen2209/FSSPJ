@@ -11,7 +11,6 @@ import home_img from '../../stlye/img/home_img.png'
 import home_img_light from '../../stlye/img/home_img_light.png'
 
 
-
 function Home() {
   const clock = {
     color: "white", fontSize: "1.2rem"
@@ -56,6 +55,7 @@ function Home() {
     return (
       <div className='account-dropdownlist'>
         <div className={checked === 'dark' ? 'wrap-pane-setting-dark' : 'wrap-pane-setting-light'}>
+          <div className='usernumber'>Alo</div>
           <div className='setting-box'>
             <div className='wrap-setting'>
               <h5>Giao diện</h5>

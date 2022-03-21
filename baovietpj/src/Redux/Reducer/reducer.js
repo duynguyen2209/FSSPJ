@@ -1,9 +1,10 @@
 import {LOG_IN, LOG_OUT} from '../../const/index'
 const initialSate = {
     Login: {
-        isLogin: false
-    }
-}
+        isLogin: false,
+        usernumber:''
+}}
+
 
 const loginReducer = ( state = initialSate, action) => {
     console.log(state, action);
@@ -11,12 +12,14 @@ const loginReducer = ( state = initialSate, action) => {
         case LOG_IN:
             return{
                 ...state,
-                isLogin: action.payload
+                isLogin: action.payload,
+                usernumber:action.usernumber
             } 
         case LOG_OUT:
             return{
                 ...state,
-                isLogin: action.payload
+                isLogin: action.payload,
+                usernumber:''
             }        
         default:
              return state;
