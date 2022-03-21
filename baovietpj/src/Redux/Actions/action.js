@@ -1,4 +1,4 @@
-import { LOG_IN,LOG_OUT,SWITCH_THEME,CHANGE_LANG } from "../../const"
+import { LOG_IN,LOG_OUT,SWITCH_THEME,CHANGE_LANG, GET_USER } from "../../const"
 
 export const Loginredux = (data,) => {
     return{
@@ -25,5 +25,12 @@ export const SwitchLang = (text) => {
     return{
         type:CHANGE_LANG,
         payload: text
+    }
+}
+
+export const GetUser = (data) => {
+    return{
+        type:GET_USER,
+        payload:data
     }
 }

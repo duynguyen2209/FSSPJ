@@ -1,18 +1,22 @@
 export const users = [
     {
         usernumber:"001C",
-        password: "1234"
+        password: "1234",
+        name:'Nguyễn Bảo Việt'
     },
     {
-        usernumber:"001C5",
-        password: "1111"
+        usernumber:"2407",
+        password: "2000",
+        name:'Nguyễn Lệ Quyên'
     },
     {
-        usernumber:"001C6",
-        password: "2222"
+        usernumber:"00C6",
+        password: "2222",
+        name:'Nguyễn Hải Long'
     },
     {
-        usernumber:"1111",
-        password: "3333"
+        usernumber:"2209",
+        password: "2209",
+        name:'Nguyễn Đức Duy'
     }   
 ];

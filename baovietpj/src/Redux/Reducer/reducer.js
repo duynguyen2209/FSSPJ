@@ -1,7 +1,9 @@
-import { LOG_IN, LOG_OUT, SWITCH_THEME,CHANGE_LANG } from '../../const/index'
+import { LOG_IN, LOG_OUT, SWITCH_THEME,CHANGE_LANG,GET_USER } from '../../const/index'
 const initialSate = {
     Login: {
-        isLogin: false
+        isLogin: false,
+        usernumber:'',
+        name:''
     },
     Theme: {
         themeMode: 'dark'
@@ -13,7 +15,7 @@ const initialSate = {
 }
 
 const Reducer = (state = initialSate, action) => {
-    console.log(state, action);
+    // console.log(state, action);
     switch (action.type) {
         case LOG_IN:
             return {
@@ -23,6 +25,17 @@ const Reducer = (state = initialSate, action) => {
                     isLogin: action.payload,
                 }
             }
+        
+        case GET_USER:{
+            return{
+                ...state,   
+                Login: {
+                    ...state.Login,
+                    usernumber:action.payload
+                }
+            }
+        }
+
         case LOG_OUT:
             return {
                 ...state,

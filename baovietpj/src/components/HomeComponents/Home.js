@@ -1,9 +1,9 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import logo_header from '../../stlye/img/logo_header.png'
 import '../HomeComponents/assets/Home.scss';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Logoutredux, SwitchTheme,SwitchLang } from '../../Redux/Actions/action';
+import { Logoutredux, SwitchTheme, SwitchLang, GetUser } from '../../Redux/Actions/action';
 import { ImClock } from 'react-icons/im';
 import { CgProfile } from 'react-icons/cg';
 import { BiDownArrow } from 'react-icons/bi';
@@ -43,28 +43,34 @@ function Home() {
     setLang(e.target.value)
     dispatch(SwitchLang(
       e.target.value
-      ))
+    ))
   }
 
   const dispatch = useDispatch();
   const hadleLogout = () => {
     dispatch(Logoutredux(false))
+    dispatch(GetUser(''))
   }
 
   const [showlist, setShowlist] = useState(false)
+
   const toggleshowlist = () => {
     if (showlist == false) {
       setShowlist(true)
+      // dispatch(GetUser('001C'))
     } else {
       setShowlist(false)
     }
   }
 
+  const User = useSelector((state) => state.Login.usernumber)
+
+
   const Accountdropdown = () => {
     return (
       <div className='account-dropdownlist'>
         <div className={checked === 'dark' ? 'wrap-pane-setting-dark' : 'wrap-pane-setting-light'}>
-          {/* <div className='usernumber'>Alo</div> */}
+          <div className='usernumber'>Xin chào: {User}</div>
           <div className='setting-box'>
             <div className='wrap-setting'>
               <h5>Giao diện</h5>
@@ -164,7 +170,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div >  {showlist ? <Accountdropdown /> : ''}</div>
+        <div >  {showlist ? <Accountdropdown/> : ''}</div>
       </header>
       <div className={checked === 'light' ? 'container-light' : 'container-dark'}>
         <br />

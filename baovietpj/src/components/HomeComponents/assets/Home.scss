@@ -137,7 +137,7 @@
 }
 .wrap-pane-setting-dark{
     width: 250px;
-    height: 160px;
+    height: 180px;
     font-size: .8rem;
     background-color: #464646;
     color: #fff;
@@ -146,6 +146,14 @@
     border-radius: 6px;
     animation: fadeIn .4s cubic-bezier(.2, .06, .05, .95);
     transition: all ease-in-out .6s;
+    .usernumber{
+        text-align: center;
+        top: -16px;
+        font-size: 1.1rem;
+        font-style: italic;
+        margin-bottom: 10px;
+        color: #fff;
+    }
     .setting-box {
         background-color: #222;
         border-radius: 5px;
@@ -160,7 +168,7 @@
 
 .wrap-pane-setting-light{
     width: 250px;
-    height: 160px;
+    height: 180px;
     font-size: 0.8rem;
     background-color: #efefef;
     color: #fff;
@@ -169,6 +177,14 @@
     border-radius: 6px;
     animation: fadeIn .4s cubic-bezier(.2, .06, .05, .95);
     transition: all ease-in-out .6s;
+    .usernumber{
+        text-align: center;
+        top: -16px;
+        font-size: 1.1rem;
+        font-style: italic;
+        margin-bottom: 10px;
+        color: #333;
+    }
     .setting-box {
         background-color: #f5f5f5;
         border-radius: 5px;
