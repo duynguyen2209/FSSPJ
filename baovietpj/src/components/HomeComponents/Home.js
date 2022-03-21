@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import logo_header from '../../stlye/img/logo_header.png'
 import '../HomeComponents/assets/Home.scss';
 import { Link } from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux' ;
+import { useDispatch, useSelector } from 'react-redux';
 import { Logoutredux, SwitchTheme } from '../../Redux/Actions/action';
 import { ImClock } from 'react-icons/im';
 import { CgProfile } from 'react-icons/cg';
@@ -12,6 +12,9 @@ import home_img_light from '../../stlye/img/home_img_light.png'
 
 
 function Home() {
+  useEffect(() => {
+    document.title = "Bảng giá BVSC"
+  }, [])
   const clock = {
     color: "white", fontSize: "1.2rem"
   }
@@ -23,7 +26,7 @@ function Home() {
   }
   const current = new Date();
   const date = current.toLocaleDateString();
-  const time = current.toLocaleTimeString( );
+  const time = current.toLocaleTimeString();
 
   const themeMode = useSelector((state) => state.Theme.themeMode)
   console.log(themeMode);
@@ -39,7 +42,7 @@ function Home() {
   const handleLang = (e) => {
     setLang(e.target.value)
   }
-  
+
   const dispatch = useDispatch();
   const hadleLogout = () => {
     dispatch(Logoutredux(false))

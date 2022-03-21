@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import LoginForm from './LoginForm';
 import { users } from '../Datafile/Userdata';
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +11,6 @@ function Login() {
         navigate('/Home')
     }
     const dispatch = useDispatch();
-
     const [error, setError] = useState("");
     function Login(details) {
         const checkuser = users.find(user => (user.usernumber === details.usernumber && user.password === details.password));
@@ -24,6 +23,9 @@ function Login() {
             setError("Fail")
         }
     }
+    useEffect(() => {
+        document.title = "Đăng nhập"
+      }, [])
 
     return (
         <div className="Login" >
