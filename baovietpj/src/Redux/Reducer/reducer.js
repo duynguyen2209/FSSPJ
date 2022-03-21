@@ -1,4 +1,4 @@
-import {LOG_IN} from '../../const/index'
+import {LOG_IN, LOG_OUT} from '../../const/index'
 const initialSate = {
     Login: {
         isLogin: false
@@ -13,6 +13,11 @@ const loginReducer = ( state = initialSate, action) => {
                 ...state,
                 isLogin: action.payload
             } 
+        case LOG_OUT:
+            return{
+                ...state,
+                isLogin: action.payload
+            }        
         default:
              return state;
     }

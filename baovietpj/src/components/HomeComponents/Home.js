@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import logo_header from '../../stlye/img/logo_header.png'
 import '../HomeComponents/assets/Home.scss';
 import { Link } from 'react-router-dom';
+import {useDispatch} from 'react-redux' ;
+import { Logoutredux } from '../../Redux/Actions/action';
 import { ImClock } from 'react-icons/im';
 import { CgProfile } from 'react-icons/cg';
 import { BiDownArrow } from 'react-icons/bi';
 import home_img from '../../stlye/img/home_img.png'
 import home_img_light from '../../stlye/img/home_img_light.png'
+
 
 
 function Home() {
@@ -31,6 +34,13 @@ function Home() {
   const [lang, setLang] = useState('vie')
   const handleLang = (e) => {
     setLang(e.target.value)
+  }
+  
+  const dispatch = useDispatch();
+  const hadleLogout = () => {
+    dispatch(Logoutredux({
+      isLogin: false
+    }))
   }
 
   const [showlist, setShowlist] = useState(false)
@@ -137,7 +147,7 @@ function Home() {
             </p>
           </marquee>
           <div className='log-in'>
-            <button className='log-in-btn'>Đăng xuất</button>
+            <Link to='/'><button className='log-in-btn' onClick={hadleLogout}>Đăng xuất</button></Link>
             <div className='wrap'>
               <button className='toggle-info' onClick={toggleshowlist}>
                 <CgProfile style={profileicon} /><BiDownArrow style={arrow} />

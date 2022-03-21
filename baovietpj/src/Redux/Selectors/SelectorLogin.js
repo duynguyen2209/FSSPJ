@@ -1,0 +1,1 @@
+export const checkLogin = (state) => state.isLogin
