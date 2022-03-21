@@ -3,7 +3,7 @@ import logo_header from '../../stlye/img/logo_header.png'
 import '../HomeComponents/assets/Home.scss';
 import { Link } from 'react-router-dom';
 import {useDispatch} from 'react-redux' ;
-import { Logoutredux } from '../../Redux/Actions/action';
+import { Logoutredux, SwitchTheme } from '../../Redux/Actions/action';
 import { ImClock } from 'react-icons/im';
 import { CgProfile } from 'react-icons/cg';
 import { BiDownArrow } from 'react-icons/bi';
@@ -26,8 +26,11 @@ function Home() {
   const time = current.toLocaleTimeString( );
 
   const [checked, setChecked] = useState('dark')
-  const handleChange = (event) => {
+  const handleChangeTheme = (event) => {
     setChecked(event.target.value);
+    dispatch(SwitchTheme({
+      themeMode:event.target.value
+    }))
   };
 
   const [lang, setLang] = useState('vie')
@@ -37,9 +40,7 @@ function Home() {
   
   const dispatch = useDispatch();
   const hadleLogout = () => {
-    dispatch(Logoutredux({
-      isLogin: false
-    }))
+    dispatch(Logoutredux(false))
   }
 
   const [showlist, setShowlist] = useState(false)
@@ -55,7 +56,7 @@ function Home() {
     return (
       <div className='account-dropdownlist'>
         <div className={checked === 'dark' ? 'wrap-pane-setting-dark' : 'wrap-pane-setting-light'}>
-          <div className='usernumber'>Alo</div>
+          {/* <div className='usernumber'>Alo</div> */}
           <div className='setting-box'>
             <div className='wrap-setting'>
               <h5>Giao diện</h5>
@@ -65,7 +66,7 @@ function Home() {
                     name='radio_theme'
                     value='light'
                     checked={checked === 'light'}
-                    onChange={handleChange}
+                    onChange={handleChangeTheme}
                   />
                   <span>Sáng</span>
                 </div>
@@ -74,7 +75,7 @@ function Home() {
                     name='radio_theme'
                     value='dark'
                     checked={checked === 'dark'}
-                    onChange={handleChange}
+                    onChange={handleChangeTheme}
                   />
                   <span>Tối</span>
                 </div>

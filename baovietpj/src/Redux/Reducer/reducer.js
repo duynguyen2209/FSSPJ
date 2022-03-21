@@ -1,25 +1,33 @@
-import {LOG_IN, LOG_OUT} from '../../const/index'
+import {LOG_IN, LOG_OUT, SWITCH_THEME} from '../../const/index'
 const initialSate = {
     Login: {
         isLogin: false,
-        usernumber:''
-}}
+},
+    Theme:{
+        themeMode: 'dark'
+    }
+}
 
 
 const loginReducer = ( state = initialSate, action) => {
     console.log(state, action);
+    
     switch(action.type){
         case LOG_IN:
             return{
                 ...state,
-                isLogin: action.payload,
-                usernumber:action.usernumber
+                Login:{
+                    ...state.Login,
+                    isLogin:action.payload,
+                }
             } 
         case LOG_OUT:
             return{
                 ...state,
-                isLogin: action.payload,
-                usernumber:''
+                Login:{
+                    ...state.Login,
+                    isLogin:action.payload,
+                }
             }        
         default:
              return state;
@@ -27,3 +35,17 @@ const loginReducer = ( state = initialSate, action) => {
 }
 
 export default loginReducer;
+
+
+export const themeReducer = ( state = initialSate, action) => {
+    switch(action.type){
+        case SWITCH_THEME:
+            return{
+                ...state,
+                Theme:{
+                    ...state,
+                    themeMode:action.payload
+                }
+            }
+    }
+}

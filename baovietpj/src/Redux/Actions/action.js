@@ -1,24 +1,22 @@
 import { LOG_IN,LOG_OUT,SWITCH_THEME } from "../../const"
 
-export const Loginredux = (data,usernumber) => {
+export const Loginredux = (boolean) => {
     return{
         type: LOG_IN,
-        payload:data,
-        usernumber:usernumber
+        payload:boolean
     }
 }
 
-export const Logoutredux = (data) => {
+export const Logoutredux = (text) => {
     return{
         type: LOG_OUT,
-        payload: data,
-        usernumber:''
+        payload: text
     }
 }
 
-export const SwitchTheme = (data) => {
+export const SwitchTheme = (text) => {
     return{
         type:SWITCH_THEME,
-        payload: data
+        payload: text
     }
 }
