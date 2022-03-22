@@ -5,9 +5,9 @@ export const users = [
         name:'Nguyễn Bảo Việt'
     },
     {
-        usernumber:"2407",
-        password: "2000",
-        name:'Nguyễn Lệ Quyên'
+        usernumber:"123C",
+        password: "2004",
+        name:'Nguyễn Công Khánh'
     },
     {
         usernumber:"00C6",

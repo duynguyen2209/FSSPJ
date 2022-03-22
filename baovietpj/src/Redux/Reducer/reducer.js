@@ -1,9 +1,9 @@
-import { LOG_IN, LOG_OUT, SWITCH_THEME,CHANGE_LANG,GET_USER } from '../../const/index'
+import { LOG_IN, LOG_OUT, SWITCH_THEME,CHANGE_LANG,GET_USER, GET_USER_NAME } from '../../const/index'
 const initialSate = {
     Login: {
         isLogin: false,
         usernumber:'',
-        name:''
+        username:''
     },
     Theme: {
         themeMode: 'dark'
@@ -32,6 +32,16 @@ const Reducer = (state = initialSate, action) => {
                 Login: {
                     ...state.Login,
                     usernumber:action.payload
+                }
+            }
+        }
+
+        case GET_USER_NAME:{
+            return{
+                ...state,
+                Login:{
+                    ...state.Login,
+                    username:action.payload
                 }
             }
         }
