@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import '../components/PriceBoard//Table/Table.scss';
+import '../components/PriceBoard/Table/Table.scss';
 
 const getReactResults = () =>
     axios.get('https://online.bvsc.com.vn/datafeed/instruments?exchange=UPCOM').then(res =>

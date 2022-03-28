@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import '../components/PriceBoard//Table/Table.scss';
+import '../components/PriceBoard/Table/Table.scss';
 
 const getReactResults = () =>
     axios.get('https://online.bvsc.com.vn/datafeed/instruments?symbols=ACB,BID,BVH,CTG,FPT,GAS,GVR,HDB,HPG,KDH,MBB,MSN,MWG,NVL,PDR,PLX,PNJ,POW,SAB,SSI,STB,TCB,TPB,VCB,VHM,VIC,VJC,VNM,VPB,VRE').then(res =>
