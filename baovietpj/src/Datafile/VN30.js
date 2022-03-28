@@ -46,10 +46,10 @@ export default class VN30 extends React.Component {
                                 <td className="red-color">{(Math.round(item.high * 100) / 100).toLocaleString()}</td>
                                 <td className="red-color">{(Math.round(item.averagePrice * 100) / 100).toLocaleString()}</td>
                                 <td className="red-color">{(Math.round(item.low * 100) / 100).toLocaleString()}</td>
-                                <td className="red-color">{(Math.round(item.foreignBuy * 100) / 100).toLocaleString()}</td>
-                                <td className="red-color">{(Math.round(item.foreignSell * 100) / 100).toLocaleString()}</td>
                                 <td className="red-color">{(Math.round(item.TOTAL_OFFER_QTTY * 100) / 100).toLocaleString()}</td>
                                 <td className="red-color">{(Math.round(item.TOTAL_BID_QTTY * 100) / 100).toLocaleString()}</td>
+                                <td className="red-color">{(Math.round(item.foreignBuy * 100) / 100).toLocaleString()}</td>
+                                <td className="red-color">{(Math.round(item.foreignSell * 100) / 100).toLocaleString()}</td>
                             </tr>
                         </tbody>
                     </>
