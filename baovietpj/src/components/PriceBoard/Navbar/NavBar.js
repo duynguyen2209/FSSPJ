@@ -45,13 +45,13 @@ function NavBar() {
                     <a title={t('navbar.follow_list')} className='follow-list'>{t('navbar.favorite_symbols')}<VscTriangleDown className='arrow-down' /></a>
                 </li>
                 <li className='tabWatchList  tabWatchList-hose-vn30 '>
-                    <a title={t('navbar.hose_titlte')} className='follow-list 'onClick={SettableHose}>HOSE<VscTriangleDown className='arrow-down' /></a>
+                    <a title={t('navbar.hose_titlte')} className='follow-list 'onClick={SettableHose}>Hose<VscTriangleDown className='arrow-down' /></a>
                     <ul className='sub-menu-item'>
-                        <li className='submenu-list'>
-                            <a onClick={SettableHose}><span>HOSE</span></a>
+                        <li className='submenu-list' onClick={SettableHose}>
+                            <a ><span>HOSE</span></a>
                         </li>
-                        <li className='submenu-list'>
-                            <a onClick={SettableVN30}><span>VN30</span></a>
+                        <li className='submenu-list'  onClick={SettableVN30}>
+                            <a><span>VN30</span></a>
                         </li>
                     </ul>
                 </li>
