@@ -1,1 +1,0 @@
-export const getUsernumber = (state) => state.usernumber

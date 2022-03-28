@@ -1,16 +1,20 @@
-import { LOG_IN, LOG_OUT, SWITCH_THEME,CHANGE_LANG,GET_USER, GET_USER_NAME } from '../../const/index'
+import { LOG_IN, LOG_OUT, SWITCH_THEME, CHANGE_LANG, GET_USER, SWITCH_TAB } from '../Actions/ActionType'
 const initialSate = {
     Login: {
         isLogin: false,
-        usernumber:'',
-        username:''
+        usernumber: '',
+        username: '',
+        table_tab: 'Hose'
     },
     Theme: {
         themeMode: 'dark'
     },
-    Lang:{
-        langis:'vie'
-    }
+    Lang: {
+        langis: 'vie'
+    },
+    ShowHide: {
+        isShow: false
+    },
 
 }
 
@@ -25,23 +29,22 @@ const Reducer = (state = initialSate, action) => {
                     isLogin: action.payload,
                 }
             }
-        
-        case GET_USER:{
-            return{
-                ...state,   
+        case SWITCH_TAB:
+            return {
+                ...state,
                 Login: {
                     ...state.Login,
-                    usernumber:action.payload
+                    table_tab: action.payload
                 }
             }
-        }
 
-        case GET_USER_NAME:{
-            return{
+        case GET_USER: {
+            return {
                 ...state,
-                Login:{
+                Login: {
                     ...state.Login,
-                    username:action.payload
+                    usernumber: action.payload.usernumber,
+                    username: action.payload.username
                 }
             }
         }
@@ -63,13 +66,14 @@ const Reducer = (state = initialSate, action) => {
                 }
             }
         case CHANGE_LANG:
-            return{
+            return {
                 ...state,
                 Lang: {
                     ...state.Lang,
                     langis: action.payload
                 }
             }
+
         default:
             return state;
     }

@@ -1,0 +1,89 @@
+{
+    "login": {
+        "header_login": "Login",
+        "header_username": "Username",
+        "account_input": "Account",
+        "header_password": "Password",
+        "password_input": "Password",
+        "btn_login": "Login",
+        "open_account": "Open account",
+        "forgot_pass": "Forgot password",
+        "radio_vie": "Vietnamese",
+        "radio_eng": "English",
+        "error_login": "Wrong account or password",
+        "try_again": "Please try again"
+    },
+    "home": {
+        "btn_logout": "Log out",
+        "greeting": "Hi",
+        "theme": "Theme",
+        "dark_theme": "Dark",
+        "light_theme": "Light",
+        "languages": "Language",
+        "language_vie": "Vietnamese",
+        "language_eng": "English"
+    },
+    "title": {
+        "document_title_home": "Price board BVSC",
+        "document_title_login": "Login"
+    },
+    "marquee": {
+        "GTTT": "TotalVol",
+        "VLGT": "TransVol",
+        "KLGDTT": "Putthrough TransVol",
+        "KLGD": "Putthrough TransVal",
+        "KLTT": "Oddlot Transval",
+        "KLTT_GT": "Oddlot Transvol",
+        "billion": "billion"
+    },
+    "navbar": {
+        "search_input": "Search for symbol",
+        "favorite_symbols": "Favorite symbol",
+        "stock_screening": "Stock screening",
+        "derivatives": "Derivatives",
+        "warrant": "Warrant",
+        "bonds": "Bonds",
+        "odd_lot": "Odd lot",
+        "slide_show": "Slide show mode",
+        "hideshow_chart": "Show/hide charts",
+        "threedot": "Show/hide columns",
+        "follow_list": "Favorite symbols",
+        "hose_titlte": "HOSE",
+        "HNX_title": "HNX",
+        "Upcom_title": "UPCOM"
+    },
+    "table": {
+        "symbol": "Symbol",
+        "ref": "Ref",
+        "celi": "Celi",
+        "floor": "Floor",
+        "bid": "Bid",
+        "prc3": "Prc 3",
+        "prc2": "Prc 2",
+        "prc1": "Prc 1",
+        "vol3": "Vol 3",
+        "vol2": "Vol 2",
+        "vol1": "Vol 1",
+        "matched": "Matched",
+        "price": "Price",
+        "vol": "Vol",
+        "percent": "%",
+        "ask": "Ask",
+        "total_vol": "Total Vol",
+        "high": "High",
+        "average": "Avg",
+        "low": "Low",
+        "remain": "Remain",
+        "foreign": "Foreign",
+        "bought": "Bought",
+        "sold": "Sold"
+    },
+    "footer": {
+        "stock_market": "Stock market: Price: ",
+        "volumn": "Volumn",
+        "derivative_market": "Derivative market: Price: ",
+        "oddlot_market": "Odd lot market: Volumn: ",
+        "price_board": "Price board",
+        "set_order": "Quick order"
+    }
+}

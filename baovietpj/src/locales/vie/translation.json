@@ -1,0 +1,89 @@
+{
+    "login": {
+        "header_login": "Đăng nhập",
+        "header_username": "Tên đăng nhập",
+        "account_input": "Tài khoản",
+        "header_password": "Mật khẩu",
+        "password_input": "Mật khẩu",
+        "btn_login": "Đăng nhập",
+        "open_account": "Mở tài khoản",
+        "forgot_pass": "Quên mật khẩu",
+        "radio_vie": "Tiếng Việt",
+        "radio_eng": "Tiếng Anh",
+        "error_login": "Tài khoản hoặc mật khẩu không đúng",
+        "try_again": "Vui lòng thử lại"
+    },
+    "home": {
+        "btn_logout": "Đăng xuất",
+        "greeting": "Xin chào",
+        "theme": "Giao diện",
+        "dark_theme": "Tối",
+        "light_theme": "Sáng",
+        "languages": "Ngôn ngữ",
+        "language_vie": "Tiếng Việt",
+        "language_eng": "Tiếng Anh"
+    },
+    "title": {
+        "document_title_home": "Bảng giá BVSC",
+        "document_title_login": "Đăng nhập"
+    },
+    "marquee": {
+        "GTTT": "GT thoả thuận",
+        "VLGT": "KL thoả thuận",
+        "KLGDTT": "KLGD lô lẻ",
+        "KLGD": "KLGD",
+        "KLTT": "KLTT",
+        "KLTT_GT": "Tổng KLTT",
+        "billion": "tỷ"
+    },
+    "navbar": {
+        "search_input": "Tìm kiếm mã CK",
+        "favorite_symbols": "Danh mục theo dõi",
+        "stock_screening": "Sàng lọc cổ phiếu",
+        "derivatives": "Phái sinh",
+        "warrant": "Chứng quyền",
+        "bonds": "Trái phiếu doanh nghiệp",
+        "odd_lot": "Lô lẻ",
+        "slide_show": "Chế độ trình chiếu",
+        "hideshow_chart": "Ẩn/Hiện biểu đồ",
+        "threedot": "Ẩn/Hiện các cột",
+        "follow_list": "Danh mục theo dõi",
+        "hose_titlte": "Sàn giao dịch chứng khoán TP Hồ Chí Minh",
+        "HNX_title": "Sàn giao dịch chứng khoán Hà Nội",
+        "Upcom_title": "Các công ty đại chúng chưa niêm yết"
+    },
+    "table": {
+        "symbol": "Mã CK",
+        "ref": "TC",
+        "celi": "Trần",
+        "floor": "Sàn",
+        "bid": "Bên bán",
+        "prc3": "Giá 3",
+        "prc2": "Giá 2",
+        "prc1": "Giá 1",
+        "vol3": "KL 3",
+        "vol2": "KL 2",
+        "vol1": "KL 1",
+        "matched": "Khớp lệnh",
+        "price": "Giá",
+        "vol": "KL",
+        "percent": "%",
+        "ask": "Bên bán",
+        "total_vol": "Tổng KL",
+        "high": "Cao",
+        "average": "TB",
+        "low": "Thấp",
+        "remain": "Dư",
+        "foreign": "ĐTNN",
+        "bought": "Mua",
+        "sold": "Bán"
+    },
+    "footer": {
+        "stock_market": "Đơn vị TT cơ sở: Giá: ",
+        "volumn": "Khối lượng",
+        "derivative_market": "Đơn vị TT phái sinh: Giá: ",
+        "oddlot_market": "Đơn vị TT lô lẻ",
+        "price_board": "Bảng giá",
+        "set_order": "Đặt lệnh"
+    }
+}

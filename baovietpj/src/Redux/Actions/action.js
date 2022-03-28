@@ -1,4 +1,4 @@
-import { LOG_IN,LOG_OUT,SWITCH_THEME,CHANGE_LANG, GET_USER } from "../../const"
+import { LOG_IN,LOG_OUT,SWITCH_THEME,CHANGE_LANG, GET_USER,SWITCH_TAB} from "../Actions/ActionType"
 
 export const Loginredux = (data,) => {
     return{
@@ -34,3 +34,11 @@ export const GetUser = (data) => {
         payload:data
     }
 }
+
+export const SwitchTab = (data) => {
+    return{
+        type:SWITCH_TAB,
+        payload:data
+    }
+}
+

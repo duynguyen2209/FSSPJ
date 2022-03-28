@@ -11,14 +11,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../stlye/img/bgdangnhap.jpg);
+    background-image: url(../../Assetss/img/bgdangnhap.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .img-logo {
-    background-image: url(../stlye/img/logo-company.png);
+    background-image: url(../../Assetss/img/logo-company.png);
     width: 62%;
     height: 40px;
     margin: auto;
@@ -93,7 +93,12 @@ form .form-inner input[type="submit"] {
     font-weight: 600;
     font-size: 16px;
     width: 100%;
-    transition: 0.4s;
+    transition: 0.2s;
+}
+
+form .form-inner input[type="submit"]:hover{
+    background-color: #e3b123;
+
 }
 
 form .form-inner .error {
@@ -133,14 +138,13 @@ form .form-inner .error {
     transition: 0.4s;
 }
 
-.lang {
-    color: #f8f8f8;
-    font-size: 14px;
-    text-decoration: underline;
+.lang-radio-btn {
     cursor: pointer;
+    margin-right: 5px;
 }
 
-.lang:hover {
-    text-decoration: none;
+.lang-text{
+    color: #fff;
+    cursor: pointer;
 }
 

@@ -5,12 +5,12 @@ export const users = [
         name:'Nguyễn Bảo Việt'
     },
     {
-        usernumber:"123C",
+        usernumber:"001C2",
         password: "2004",
         name:'Nguyễn Công Khánh'
     },
     {
-        usernumber:"00C6",
+        usernumber:"001C4",
         password: "2222",
         name:'Nguyễn Hải Long'
     },

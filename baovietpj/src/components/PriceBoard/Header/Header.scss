@@ -1,4 +1,6 @@
-/* Headerr */
+.header-home{
+    margin-bottom: 10px;
+}
 
 .header__home-dark {
     background-color: #3c3c3cf2;
@@ -7,8 +9,24 @@
     justify-content: space-between;
     transition: 0.4s;
     .logo_header {
-        cursor: url(../../../stlye/img/cursor_home.png), auto;
+        cursor: url(../../../Assetss/img/cursor_home.png), auto;
         width: 250px;
+    }
+    .date-clock{
+        display: flex;
+        justify-content: center;
+        color: #d8d8d8;
+        align-items: center;
+        font-size: 1rem;
+        line-height: 40px;
+        margin-right: 25px;
+        margin-left: 20px;
+        .clock-icon{
+            color: #236abb; 
+            transition: .4s;
+            font-size: 1rem;
+            margin-right: 4px;
+        }
     }
     .log-in{
         display: flex;
@@ -29,8 +47,9 @@
         }
         .wrap{
             .toggle-info:hover{
-                background-color: #236abb;
+                color: #236abb;
                 border-radius: 6px;
+                cursor: pointer;
             }
         }
         .log-in-btn:hover {
@@ -40,10 +59,10 @@
             content: "";
             display: block;
             position: absolute;
-            border-right: 1px solid #2c2525;
+            border-right:1px solid #2c2525;
             height: 40px;
             right: 65px;
-            transform: translateY(-74%);
+            transform: translateY(-76%);
         } 
     }
 }
@@ -55,8 +74,24 @@
     justify-content: space-between;
     transition: 0.4s;
     .logo_header {
-        cursor: url(../../../stlye/img/cursor_home.png), auto;
+        cursor: url(../../../Assetss/img/cursor_home.png), auto;
         width: 250px;
+    }
+    .date-clock{
+        display: flex;
+        justify-content: center;
+        color: #fff;
+        align-items: center;
+        font-size: 1rem;
+        line-height: 40px;
+        margin-right: 25px;
+        margin-left: 20px;
+        .clock-icon{
+            color: #fff; 
+            transition: .4s;
+            font-size: 1rem;
+            margin-right: 4px;
+        }
     }
     .log-in{
         display: flex;
@@ -77,8 +112,10 @@
         }
         .wrap{
             .toggle-info:hover{
-                background-color: #137fff;
                 border-radius: 6px;
+                cursor: pointer;
+                color: #236abb;
+
             }
         }   
         .log-in-btn:hover {
@@ -91,32 +128,38 @@
             border-right: 1px solid #17457b;
             height: 40px;
             right: 65px;
-            transform: translateY(-74%);
+            transform: translateY(-76%);
         } 
     }
 }
 
 .container-dark{
-    background-color: #2d2d2d;
+    background-color: #232323;
     width: 100%;
-    height: 100vh;
+    height: 200px;
+    transition: 0.4s;
+    .home-img{
+        background: #232323;
+    }
     
 }
 
 .container-light{
-    background-color: #fff;
+    background-color: #e6e6e6;
     width: 100%;
-    height: 100vh;
+    height: 200px;
+    transition: 0.4s;
+    .home-img{
+        background: #e6e6e6;;
+    }
     
 }
-
-
 
 .toggle-info{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 20px;
+    margin-right: 12px;
     appearance: none;
     background: none;
     border: none;
@@ -125,19 +168,29 @@
 }
 
 
-
-
 /*Setting box*/
 .account-dropdownlist{
-    position: absolute;
+    position: fixed;
     float: right;
     margin-top: 8px;
     margin-right: 5px;
-    right: 5px; 
+    right: 6px; 
+    z-index: 10;
 }
+
+.img-logo-lang{
+    width: 40px;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
 .wrap-pane-setting-dark{
-    width: 250px;
-    height: 180px;
+    width: 300px;
+    height: 100%;
     font-size: .8rem;
     background-color: #464646;
     color: #fff;
@@ -148,7 +201,6 @@
     transition: all ease-in-out .6s;
     .usernumber{
         text-align: center;
-        top: -16px;
         font-size: 1.1rem;
         font-style: italic;
         margin-bottom: 10px;
@@ -167,8 +219,8 @@
 }
 
 .wrap-pane-setting-light{
-    width: 250px;
-    height: 180px;
+    width: 300px;
+    height: 100%;
     font-size: 0.8rem;
     background-color: #efefef;
     color: #fff;
@@ -179,7 +231,6 @@
     transition: all ease-in-out .6s;
     .usernumber{
         text-align: center;
-        top: -16px;
         font-size: 1.1rem;
         font-style: italic;
         margin-bottom: 10px;
@@ -205,51 +256,47 @@
     margin-bottom: 10px;
 }
 
-
-
 .setting-pane{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    font-size: 1rem;
+}
+
+.setting-option{
+    display: flex;
+    align-items: center;
 }
 
 .setting-option input[type="radio"]{
-    margin-right: 6px;
+    margin-right: 10px;
+    height: 16px;
+    width: 16px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.setting-option input[type="radio"]:hover :checked{
+    opacity: .1;
 }
 
 
-  
-
-/*Container*/
-.chart-img{
-    width: 100%;
-    height: 150px;
+.info-icon{
+    font-size: 1.2em;
+    font-size: 1rem;
 }
 
-.date-clock{
+.info-icon-arrow{
+    font-size: 1rem;
+    margin-left: 4px;
+}
+
+.blue-hover{
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.toggle-info{
     color: #fff;
-    font-size: 1.2rem;
-}
-
-.moving-band{
-    width: 55%;
-}
-.marquee-header{
-    color: #fff;
-}
-
-.marquee-item{
-    font-size: 1rem;
-    color: #fff;
-}
-
-.marquee-item:nth-child(2n+0){
-    margin-right: 50px;
-
-}
-
-.marquee-item:nth-child(2n+1){
-    color: #cdaf30;
 }

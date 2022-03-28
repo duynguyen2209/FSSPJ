@@ -2,7 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: montserrat, sans-serif;
+    font-family: 'Arimo', sans-serif;
 }
 
-
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color:  #1b1b1b; 
+    border-radius: 4px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(73, 73, 73); 
+    border-radius: 4px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4e4e4e; 
+  }

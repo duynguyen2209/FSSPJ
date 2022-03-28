@@ -1,0 +1,35 @@
+.fixed{
+    position: fixed;
+    top: 0;
+}
+
+/*Container*/
+.chart-img{
+    width: 100%;
+    height: 150px;
+    transition: 0.4s;
+}
+
+.moving-band{
+    margin-right: 25px;
+}
+
+.marquee-header{
+    color: #fff;
+}
+
+.marquee-item{
+    font-size: 1rem;
+    color: #fff;
+}
+
+.marquee-item:nth-child(2n+0){
+    margin-right: 45px;
+    font-size: .8rem;
+}
+
+.marquee-item:nth-child(2n+1){
+    color: #e2b81f;
+    font-weight: 500;
+    font-size: .8rem;
+}
