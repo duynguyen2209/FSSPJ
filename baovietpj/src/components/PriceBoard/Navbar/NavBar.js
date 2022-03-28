@@ -48,10 +48,10 @@ function NavBar() {
                     <a title={t('navbar.hose_titlte')} className='follow-list 'onClick={SettableHose}>HOSE<VscTriangleDown className='arrow-down' /></a>
                     <ul className='sub-menu-item'>
                         <li className='submenu-list'>
-                            <a><span>HOSE</span></a>
+                            <a onClick={SettableHose}><span>HOSE</span></a>
                         </li>
                         <li className='submenu-list'>
-                            <a><span>VN30</span></a>
+                            <a onClick={SettableVN30}><span>VN30</span></a>
                         </li>
                     </ul>
                 </li>
