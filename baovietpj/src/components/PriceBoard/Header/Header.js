@@ -181,14 +181,14 @@ function Header() {
             <Link to='/'><button className='log-in-btn' onClick={hadleLogout}>{t('home.btn_logout')}</button></Link>
             <div className='wrap ' onClick={toggleshowlist} >
               <button className='toggle-info'>
-               <span className='blue-hover'> <CgProfile className='info-icon'/><VscTriangleDown className='info-icon-arrow'/></span>
+                <span className='blue-hover'> <CgProfile className='info-icon' /><VscTriangleDown className='info-icon-arrow' /></span>
               </button>
             </div>
           </div>
         </div>
         <div >  {showlist ? <Accountdropdown /> : ''}</div>
       </header>
-      
+
     </div>
   )
 }
