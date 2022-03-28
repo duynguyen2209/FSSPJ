@@ -7,6 +7,6 @@ export default function ShowHome(){
     if(usercheck){
         return <Home/>
     }else{
-        return ''
+        return <h1>Not Found</h1>
     }
 }
