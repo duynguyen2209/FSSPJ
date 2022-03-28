@@ -32,8 +32,6 @@ function NavBar() {
         dispatch(SwitchTab('UPCOM'))
     }
 
-
-
     return (
         <div className={themeMode === 'light' ? 'Nav-bar-light' : 'Nav-bar-dark'}>
             <div className='search-box'>
