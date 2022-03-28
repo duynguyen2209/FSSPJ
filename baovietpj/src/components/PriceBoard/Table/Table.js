@@ -11,7 +11,6 @@ function Table() {
   const Table_tab = useSelector((state) => state.Login.table_tab)
   const themeMode = useSelector((state) => state.Theme.themeMode)
   const { t, i18n } = useTranslation();
-  console.log(themeMode);
   const Which_tab  = () => {
     if(Table_tab === 'Hose'){
       return (<Hose/>)
