@@ -52,7 +52,7 @@ function Table() {
             <th scope="col">{t('table.vol')}</th>
             <th scope="col">{t('table.percent')}</th>
             <th scope="col">{t('table.prc1')}</th>
-            <th scope="col">{t('table.price')}</th>
+            <th scope="col">{t('table.vol1')}</th>
             <th scope="col">{t('table.prc2')}</th>
             <th scope="col">{t('table.vol2')}</th>
             <th scope="col">{t('table.prc3')}</th>

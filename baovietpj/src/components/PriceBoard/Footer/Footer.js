@@ -23,11 +23,11 @@ function Footer() {
             </div>
             <div className='wrap-btn'>
                 <div className='btn-watch'>
-                    <RiLineChartLine className='watch-chart-icon'/>
+                    <RiLineChartLine className='watch-chart-icon' />
                     <span>{t('footer.price_board')}</span>
                 </div>
                 <div className='btn-set'>
-                    <HiShoppingCart className='watch-chart-icon'/>
+                    <HiShoppingCart className='watch-chart-icon' />
                     <span>{t('footer.set_order')}</span>
                 </div>
             </div>
