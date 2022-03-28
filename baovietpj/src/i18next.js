@@ -20,7 +20,7 @@ i18n
                 translation: Vienames
             }
         },
-        fallbackLng: 'eng',
+        fallbackLng: 'vie',
         debug: true,
         whitelist:Languages,
     });
