@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import logo_header from '../../../Assetss/img/logo_header.png';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Logoutredux, SwitchTheme, SwitchLang, GetUser } from '../../../Redux/Actions/action';
+import { Logoutredux, SwitchTheme, SwitchLang, GetUser, ChangTabName } from '../../../Redux/Actions/action';
 import { ImClock } from 'react-icons/im';
 import { CgProfile } from 'react-icons/cg';
 import { VscTriangleDown } from 'react-icons/vsc';

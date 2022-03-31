@@ -1,10 +1,11 @@
-import { LOG_IN, LOG_OUT, SWITCH_THEME, CHANGE_LANG, GET_USER, SWITCH_TAB } from '../Actions/ActionType'
+import { LOG_IN, LOG_OUT, SWITCH_THEME, CHANGE_LANG, GET_USER, SWITCH_TAB, NAME_TAB } from '../Actions/ActionType'
 const initialSate = {
     Login: {
         isLogin: false,
         usernumber: '',
         username: '',
-        table_tab: 'Hose'
+        table_tab: 'Hose',
+        TabName_: 'HOSE'
     },
     Theme: {
         themeMode: 'dark'
@@ -35,6 +36,15 @@ const Reducer = (state = initialSate, action) => {
                 Login: {
                     ...state.Login,
                     table_tab: action.payload
+                }
+            }
+
+        case NAME_TAB:
+            return {
+                ...state,
+                Login: {
+                    ...state.Login,
+                    TabName_: action.payload
                 }
             }
 

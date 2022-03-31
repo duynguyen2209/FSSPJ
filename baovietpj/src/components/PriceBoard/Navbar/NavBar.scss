@@ -76,21 +76,27 @@
                     cursor: pointer;
                     font-size: .9rem;
                 }
+                .submenu-list-active{
+                    padding: 10px;
+                    background: #735531;
+                    cursor: pointer;
+                    font-size: .9rem
+                }
                 .submenu-list:hover{
                     color: #236abb;
                     cursor: pointer;
                 }
-                .submenu-list-active{
-                    color: #236abb;
-                    cursor: pointer;
-                }
+                
             }
             .follow-list:hover{
                 background-color: #236abb;
             }
-            
+            .active{
+                background-color: #236abb !important;
+            }
             .follow-list{
                 display: flex;
+                white-space: nowrap;
                 align-items: center;
                 background: #3b3b3b;
                 border-radius: 3px 3px 0 0;
@@ -245,12 +251,15 @@
                     font-size: .9rem;
                     cursor: pointer;
                 }
-                .submenu-list:hover{
-                    background-color: #f3d2aa;
+                .submenu-list-active{
+                    padding: 10px;
+                    color:#333;
+                    background: #f3d2aa;
+                    font-size: .9rem;
                     cursor: pointer;
                 }
-                .submenu-list-active{
-                    color: #236abb;
+                .submenu-list:hover{
+                    background-color: #f3d2aa;
                     cursor: pointer;
                 }
             }
@@ -258,9 +267,13 @@
                 background-color: #236abb;
                 color: #fff;
             }
-            
+            .active{
+                background-color: #236abb !important;
+                color: #fff !important;
+            }
             .follow-list{
                 display: flex;
+                white-space: nowrap;
                 align-items: center;
                 background: #d2d2d2;
                 border-radius: 3px 3px 0 0;
@@ -335,6 +348,3 @@
     
 }
 
-.active{
-    background-color: #236abb;
-}

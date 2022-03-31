@@ -1,0 +1,74 @@
+.Modal-box{
+    width: 700px;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: unset;
+    background-color: rgb(34, 34, 34);
+    border-radius: 10px;
+    z-index: 98;
+    padding: 0px;
+    box-shadow: rgb(0 0 0 / 14%) 0px 0px 4px, rgb(0 0 0 / 28%) 0px 4px 8px;
+    overflow-x: hidden;
+    opacity: 1;
+    border: 2px solid rgb(136, 136, 136);
+    max-height: 500px;
+    transform: translate(-50%, -50%);
+    display: block;
+    color: #fff;
+}
+
+h2{
+    font-size: 1rem;
+    margin: 10px 0 10px 25px;
+}
+
+.btn-close{
+    right: 6px;
+    border-radius: 2px;
+    top: 2px;
+    border: 1px solid;
+    position: absolute;
+    color: rgb(177 61 61);
+    z-index: 99;
+}
+
+.nav-tab{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    border-bottom: 1px solid #3a3a3a;
+    cursor: pointer;
+}
+
+.modal-tab{
+    padding: 12px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.modal-tab-active{
+    background: #236abb;
+    padding: 12px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.col-config{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.col-option{
+    margin: 10px 0 10px 25px;
+    list-style-type: none;
+}
+
+.con-sub{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+}

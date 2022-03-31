@@ -9,19 +9,20 @@
     border-collapse: collapse;
     margin-top: 195px;
     transition: .4s;
-
+    table-layout:auto;
     .fix-sticky{
         position: sticky;     
         top: 234px;
         background-color: #181313;
         color: #f0f8ff;
+        table-layout: fixed;
     }
     td, th{
         border: 1px solid #343434;
-        padding: 6px;
-        width: 100%;
         font-weight: 400;
-
+        padding: 6px;
+        width: 55px;
+        height: 35px;
     }
     tbody tr:hover{
         background-color: #333333;
@@ -50,6 +51,8 @@
         border: 1px solid #343434;
         padding: 6px;
         font-weight: 400;
+        width: 55px;
+        height: 35px;
 
     }
     tbody tr:hover{
@@ -81,3 +84,9 @@
 .red-color{
     color:#fd0000 ;
 }
+
+.totalTrading_color{
+    color: rgb(161, 115, 115);
+    text-align: right;
+}
+

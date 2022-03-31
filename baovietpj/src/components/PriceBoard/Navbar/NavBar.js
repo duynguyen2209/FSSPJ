@@ -5,30 +5,41 @@ import { AiFillStar } from 'react-icons/ai';
 import { IoIosArrowDropupCircle } from 'react-icons/io'
 import { BsFillCameraVideoFill, BsThreeDotsVertical } from 'react-icons/bs'
 import './NavBar.scss';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next'
-import { SwitchTab } from '../../../Redux/Actions/action';
+import { ChangTabName, SwitchTab } from '../../../Redux/Actions/action';
+
 function NavBar() {
     const themeMode = useSelector((state) => state.Theme.themeMode)
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const dispatch = useDispatch();
     const Table_tab = useSelector((state) => state.Login.table_tab)
-    const [table,setTable] = useState(Table_tab)
-    
+    const [table, setTable] = useState(Table_tab)
+    const TabHoseVn30 = useSelector((state) => state.Login.TabName_)
+    const [tabName, settabName] = useState(TabHoseVn30)
+
     const SettableHose = () => {
         setTable('Hose')
         dispatch(SwitchTab('Hose'))
+        settabName('HOSE')
+        dispatch(ChangTabName('HOSE'))
     }
     const SettableVN30 = () => {
         setTable('VN30')
         dispatch(SwitchTab('VN30'))
+        settabName('VN30')
+        dispatch(ChangTabName('VN30'))
+
     }
     const SettableHNX = () => {
         setTable('HNX')
+        settabName('HOSE')
         dispatch(SwitchTab('HNX'))
+
     }
     const SettableUPCOM = () => {
         setTable('UPCOM')
+        settabName('HOSE')
         dispatch(SwitchTab('UPCOM'))
     }
 
@@ -45,24 +56,24 @@ function NavBar() {
                     <a title={t('navbar.follow_list')} className='follow-list'>{t('navbar.favorite_symbols')}<VscTriangleDown className='arrow-down' /></a>
                 </li>
                 <li className='tabWatchList  tabWatchList-hose-vn30 '>
-                    <a title={t('navbar.hose_titlte')} className='follow-list 'onClick={SettableHose}>Hose<VscTriangleDown className='arrow-down' /></a>
+                    <a title={t('navbar.hose_titlte')} className={table === 'Hose' ? 'follow-list active' : 'follow-list'} onClick={SettableHose}>{tabName}<VscTriangleDown className='arrow-down' /></a>
                     <ul className='sub-menu-item'>
-                        <li className='submenu-list' onClick={SettableHose}>
-                            <a ><span>HOSE</span></a>
+                        <li className={table === 'Hose' ? 'submenu-list-active' : 'submenu-list'} onClick={SettableHose} >
+                            <a ><span >HOSE</span></a>
                         </li>
-                        <li className='submenu-list'  onClick={SettableVN30}>
+                        <li className={table === 'VN30' ? 'submenu-list-active' : 'submenu-list'} onClick={SettableVN30}>
                             <a><span>VN30</span></a>
                         </li>
                     </ul>
                 </li>
-                <li className='tabWatchList ' onClick={SettableHNX}>
-                    <a title={t('navbar.HNX_title')}className='follow-list'>HNX<VscTriangleDown className='arrow-down' /></a>
+                <li className='tabWatchList' onClick={SettableHNX}>
+                    <a title={t('navbar.HNX_title')} className={table === 'HNX' ? 'follow-list active' : 'follow-list'}>HNX<VscTriangleDown className='arrow-down' /></a>
                 </li>
                 <li className='tabWatchList ' onClick={SettableUPCOM}>
-                    <a title={t('navbar.Upcom_title')} className='follow-list'>UPCOM<VscTriangleDown className='arrow-down' /></a>
+                    <a title={t('navbar.Upcom_title')} className={table === 'UPCOM' ? 'follow-list active' : 'follow-list'}>UPCOM<VscTriangleDown className='arrow-down' /></a>
                 </li>
                 <li className='tabWatchList '>
-                    <a className='follow-list'>{t('navbar.stock_screening')}<AiFillStar className='arrow-down star-icon' /><VscTriangleDown className='arrow-down' /></a>
+                    <a className='follow-list '>{t('navbar.stock_screening')}<AiFillStar className='arrow-down star-icon' /><VscTriangleDown className='arrow-down' /></a>
                 </li>
                 <li className='tabWatchList '>
                     <a className='follow-list'>{t('navbar.derivatives')}<VscTriangleDown className='arrow-down' /></a>

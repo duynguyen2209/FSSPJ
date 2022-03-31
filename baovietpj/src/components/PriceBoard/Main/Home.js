@@ -6,7 +6,7 @@ import home_img_light from '../../../Assetss/img/home_img_light.png';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import { useTranslation } from 'react-i18next'
-import Body from '../Body/Body';
+import Body from '../Body/Container/Body';
 
 function Home() {
   const { t, i18n } = useTranslation();
