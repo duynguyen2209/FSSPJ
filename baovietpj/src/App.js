@@ -9,7 +9,7 @@ function App() {
         <>
             <Routes>
                 <Route exact path={path.LOGIN} element={<PrivateRouteLogin><Login /></PrivateRouteLogin> } />
-                <Route path={path.HOME} element={<PrivateRouteHome><Home/></PrivateRouteHome>}/>S
+                <Route path={path.HOME} element={<PrivateRouteHome><Home/></PrivateRouteHome>}/>
             </Routes>
         </>
     );
