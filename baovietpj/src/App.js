@@ -8,8 +8,8 @@ function App() {
     return (
         <>
             <Routes>
-                <Route exact path="/" element={<PrivateRouteLogin><Login /></PrivateRouteLogin> } />
-                <Route path={'/Home'} element={<PrivateRouteHome><Home/></PrivateRouteHome>}/>S
+                <Route exact path={path.LOGIN} element={<PrivateRouteLogin><Login /></PrivateRouteLogin> } />
+                <Route path={path.HOME} element={<PrivateRouteHome><Home/></PrivateRouteHome>}/>S
             </Routes>
         </>
     );
