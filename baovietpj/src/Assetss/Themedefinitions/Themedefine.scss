@@ -1,23 +1,105 @@
 $themes: (
   light: (
-    backgroundColor: white,
-    textColor: #408bbd,
-    buttonTextColor: #408bbd,
-    buttonTextTransform: none,
-    buttonTextHoverColor: #61b0e7,
-    buttonColor: #fff,
-    buttonBorder: 2px solid #408bbd,
+    /*Header*/
+    headerColor:#236abb,
+    backgroundColor: #e6e6e6,
+    clockColor:#fff,
+    dateTimeColor:#fff,
+    buttonLogout: #2334789c,
+    textBtnLogout:#fff,
+    log-outhover:#347aca,
+    info-toggle: #0e3c71,
+    info-color:#fff,
+    logout-after: 1px solid #2c2525,
+    backgroundAccBox:#efefef,
+    /*Header*/
+
+    /*Navbar*/
+    bgBody:#e6e6e6,
+    textColor: #5a5a5a,
+    textNavbar:#fff,
+    backgroudInput:#d2d2d2,
+    backgroudInputHover:#fff,
+    follow-list: #d2d2d2,
+    buttonActive:#236abb,
+    backgroundNavbar:#d2d2d2,
+    subMenubg:#e6e6e6,
+    submenuHover:#236abb,
+    submenuActive:#9c7749,
+    icon-rightColor:#444,
+    icon-rightBg:#d2d2d2,
+    icon-rightHover: #236abb,
+    /*Navbar*/
+
+    /*Table*/
+    backgroundTable:#f5f5f5,
+    borderTable: 1px solid #d2d2d2,
+    colColor:#ddd,
+    tableColortxt:#333,
+    tablehover:#dfdbdb,
+    td-thamchieu:#d4b001,
+    td-tran:#ce0ece,
+    tr-san:#00c5c5,
+    totalTrading:#333,
+    bg3col:#e8e8e8,
+    /*Table*/
+
+    btn-setOrderhover:#1d5799,
+    btn-priceboard-hover:#2f2f2f,
+    footer-color:#00dd00
   ),
   dark: (
-    backgroundColor: #222,
-    textColor: #ddd,
-    buttonTextColor: #aaa,
-    buttonTextTransform: uppercase,
-    buttonTextHoverColor: #ddd,
-    buttonColor: #333,
-    buttonBorder: 1px solid #333,
+    /*Header*/
+    headerColor:#3b3b3b,
+    backgroundColor: #242424,
+    clockColor:#236abb,
+    dateTimeColor:#d8d8d8,
+    buttonLogout: #236abb,
+    textBtnLogout:#fff,
+    log-outhover:#347aca,
+    info-toggle: #4383cc,
+    info-color:#fff,
+    logout-after: 1px solid #2c2525,
+    backgroundAccBox:#464646,
+    /*Header*/
+
+    /*Navbar*/
+    bgBody:#242424,
+    textColor: #f0f8ff,
+    textNavbar:#fff,
+    backgroudInput:#d2d2d2,
+    backgroudInputHover:#fff,
+    follow-list: #3b3b3b,
+    buttonActive:#236abb,
+    backgroundNavbar:#3b3b3b,
+    subMenubg:#3a3a3af7,
+    submenuHover:#236abb,
+    submenuActive:#735531,
+    icon-rightColor:#dddddd,
+    icon-rightBg:#3a3a3a,
+    icon-rightHover: #ff851b,
+    /*Navbar*/
+
+    /*Table*/
+    backgroundTable: #181313,
+    tableColortxt:#fff,
+    colColor:#282828,
+    borderTable:  1px solid #413c3c,
+    tablehover:#333333,
+    td-thamchieu:#f3c117,
+    td-tran:#d433a9,
+    tr-san:#00c5c5,
+    totalTrading:#fff,
+    bg3col:#2e2e2e,
+    /*Table*/
+
+    btn-setOrderhover:#1d5799,
+    btn-priceboard-hover:#2f2f2f,
+    footer-color:#00dd00
   )
 );
+
+
 
 @mixin themify($themes) {
   @each $theme, $map in $themes {

@@ -1,0 +1,10 @@
+@import '../../../../Assetss/Themedefinitions/Themedefine.scss';
+.body{
+    @include themify($themes){
+        background-color: themed('bgBody');
+    }
+    margin-top: 47px;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+}

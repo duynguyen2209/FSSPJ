@@ -7,7 +7,7 @@ import NavBar from '../../Navbar/NavBar'
 function Body() {
   const themeMode = useSelector((state) => state.Theme.themeMode)
   return (
-    <div className={themeMode === 'dark' ? 'body-dark' : 'body-light'}>
+    <div className='body'>
       <NavBar />
       <Table />
     </div>

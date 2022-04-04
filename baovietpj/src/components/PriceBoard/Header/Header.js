@@ -130,9 +130,9 @@ function Header() {
     )
   }
   return (
-    <div>
-      <header className='header-home'>
-        <div className={checked === 'light' ? 'header__home-light' : 'header__home-dark'}>
+    <div  className={checked === 'light' ? 'theme-light' : 'theme-dark'}>
+      <header>
+        <div className='header'>
           <img className='logo_header' src={logo_header} />
           <div className='date-clock'>
             <ImClock className="clock-icon" />
@@ -177,8 +177,8 @@ function Header() {
               <span className='marquee-item'>16.702</span>
             </p>
           </marquee>
-          <div className='log-in'>
-            <Link to='/'><button className='log-in-btn' onClick={hadleLogout}>{t('home.btn_logout')}</button></Link>
+          <div className='logout'>
+            <Link to='/'><button className='logout-btn' onClick={hadleLogout}>{t('home.btn_logout')}</button></Link>
             <div className='wrap ' onClick={toggleshowlist} >
               <button className='toggle-info'>
                 <span className='blue-hover'> <CgProfile className='info-icon' /><VscTriangleDown className='info-icon-arrow' /></span>

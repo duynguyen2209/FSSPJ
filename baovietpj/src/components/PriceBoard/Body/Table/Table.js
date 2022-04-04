@@ -9,7 +9,6 @@ import { useTranslation } from 'react-i18next';
 
 function Table() {
   const Table_tab = useSelector((state) => state.Login.table_tab)
-  const themeMode = useSelector((state) => state.Theme.themeMode)
   const { t } = useTranslation();
   const Which_tab  = () => {
     if(Table_tab === 'Hose'){
@@ -25,44 +24,44 @@ function Table() {
 
   return (
     <>
-      <table className={themeMode === 'dark' ? 'table-dark' : 'table-light'} >
+      <table className='table' >
         <thead className="fix-sticky">
           <tr>
-            <th scope="col" rowSpan="2">{t('table.symbol')}</th>
-            <th scope="col" rowSpan="2">{t('table.ref')}</th>
-            <th scope="col" rowSpan="2">{t('table.celi')}</th>
-            <th scope="col" rowSpan="2">{t('table.floor')}</th>
-            <th scope="col" colSpan="6">{t('table.bid')} </th>
-            <th scope="col" colSpan="3">{t('table.matched')} </th>
-            <th scope="col" colSpan="6">{t('table.ask')} </th>
-            <th scope="col" rowSpan="2">{t('table.total_vol')} </th>
-            <th scope="col" colSpan="3">{t('table.price')}</th>
-            <th scope="col" colSpan="2">{t('table.remain')}</th>
-            <th scope="col" colSpan="2">{t('table.foreign')}</th>
+            <th col='1' rowSpan="2">{t('table.symbol')}</th>
+            <th col='1' rowSpan="2" className='bg3Col'>{t('table.ref')}</th>
+            <th col='1' rowSpan="2" className='bg3Col'>{t('table.celi')}</th>
+            <th col='1' rowSpan="2" className='bg3Col'>{t('table.floor')}</th>
+            <th col='6' colSpan="6">{t('table.bid')} </th>
+            <th col='3' colSpan="3" className='bg3Col'>{t('table.matched')} </th>
+            <th col='6' colSpan="6">{t('table.ask')} </th>
+            <th col='2' rowSpan="2">{t('table.total_vol')} </th>
+            <th col='3' colSpan="3" className='bg3Col'>{t('table.price')}</th>
+            <th col='2' colSpan="2">{t('table.remain')}</th>
+            <th col='2' colSpan="2">{t('table.foreign')}</th>
           </tr>
           <tr>
-            <th scope="col">{t('table.prc3')}</th>
-            <th scope="col">{t('table.vol3')}</th>
-            <th scope="col">{t('table.prc2')}</th>
-            <th scope="col">{t('table.vol2')}</th>
-            <th scope="col">{t('table.prc1')}</th>
-            <th scope="col">{t('table.vol1')}</th>
-            <th scope="col">{t('table.price')}</th>
-            <th scope="col">{t('table.vol')}</th>
-            <th scope="col">{t('table.percent')}</th>
-            <th scope="col">{t('table.prc1')}</th>
-            <th scope="col">{t('table.vol1')}</th>
-            <th scope="col">{t('table.prc2')}</th>
-            <th scope="col">{t('table.vol2')}</th>
-            <th scope="col">{t('table.prc3')}</th>
-            <th scope="col">{t('table.vol3')}</th>
-            <th scope="col">{t('table.high')}</th>
-            <th scope="col">{t('table.average')}</th>
-            <th scope="col">{t('table.low')}</th>
-            <th scope="col">{t('table.bought')}</th>
-            <th scope="col">{t('table.sold')}</th>
-            <th scope="col">{t('table.bought')}</th>
-            <th scope="col">{t('table.sold')}</th>
+            <th col='1' rowSpan='1'>{t('table.prc3')}</th>
+            <th col='1' rowSpan='1'>{t('table.vol3')}</th>
+            <th col='1' rowSpan='1'>{t('table.prc2')}</th>
+            <th col='1' rowSpan='1'>{t('table.vol2')}</th>
+            <th col='1' rowSpan='1'>{t('table.prc1')}</th>
+            <th col='1' rowSpan='1'>{t('table.vol1')}</th>
+            <th col='1' rowSpan='1' className='bg3Col'>{t('table.price')}</th>
+            <th col='1' rowSpan='1' className='bg3Col'>{t('table.vol')}</th>
+            <th col='1' rowSpan='1' className='bg3Col'>{t('table.percent')}</th>
+            <th col='1' rowSpan='1'>{t('table.prc1')}</th>
+            <th col='1' rowSpan='1'>{t('table.vol1')}</th>
+            <th col='1' rowSpan='1'>{t('table.prc2')}</th>
+            <th col='1' rowSpan='1'>{t('table.vol2')}</th>
+            <th col='1' rowSpan='1'>{t('table.prc3')}</th>
+            <th col='1' rowSpan='1'>{t('table.vol3')}</th>
+            <th col='1' rowSpan='1' className='bg3Col'>{t('table.high')}</th>
+            <th col='1' rowSpan='1' className='bg3Col'>{t('table.average')}</th>
+            <th col='1' rowSpan='1' className='bg3Col'>{t('table.low')}</th>
+            <th col='1' rowSpan='1'>{t('table.bought')}</th>
+            <th col='1' rowSpan='1'>{t('table.sold')}</th>
+            <th col='1' rowSpan='1'>{t('table.bought')}</th>
+            <th col='2' rowSpan='1'>{t('table.sold')}</th>
           </tr>
         </thead>
         {Which_tab()}

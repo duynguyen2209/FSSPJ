@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './Home.scss';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import home_img from '../../../Assetss/img/home_img.png';
 import home_img_light from '../../../Assetss/img/home_img_light.png';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import { useTranslation } from 'react-i18next'
-import Body from '../Body/Container/Body';
+import Body from '../Body/Contain/Body';
 
 function Home() {
   const { t, i18n } = useTranslation();
@@ -17,8 +17,8 @@ function Home() {
   const themeMode = useSelector((state) => state.Theme.themeMode)
 
   return (
-    <div className='main' >
-      <div className={themeMode === 'light' ? 'container-light fixed' : 'container-dark fixed'}>
+    <div className={themeMode === 'dark' ? 'theme-dark' : 'theme-light'} >
+      <div className='fixed'>
         <div className=''>
           {/* Header */}
           <Header />

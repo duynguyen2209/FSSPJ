@@ -43,8 +43,18 @@ function NavBar() {
         dispatch(SwitchTab('UPCOM'))
     }
 
+    const setActive = () => {
+        if (table === 'Hose') {
+            return 'follow-list active'
+        } else if (table === 'VN30') {
+            return 'follow-list active'
+        } else {
+            return 'follow-list'
+        }
+    }
+
     return (
-        <div className={themeMode === 'light' ? 'Nav-bar-light' : 'Nav-bar-dark'}>
+        <div className='Navbar'>
             <div className='search-box'>
                 <div className='input-box'>
                     <input type='text' placeholder={t('navbar.search_input')} className='input-search' />
@@ -55,8 +65,8 @@ function NavBar() {
                 <li className='tabWatchList '>
                     <a title={t('navbar.follow_list')} className='follow-list'>{t('navbar.favorite_symbols')}<VscTriangleDown className='arrow-down' /></a>
                 </li>
-                <li className='tabWatchList  tabWatchList-hose-vn30 '>
-                    <a title={t('navbar.hose_titlte')} className={table === 'Hose' ? 'follow-list active' : 'follow-list'} onClick={SettableHose}>{tabName}<VscTriangleDown className='arrow-down' /></a>
+                <li className='tabWatchList  tabWatchList-hose-vn30'>
+                    <a title={t('navbar.hose_titlte')} className={setActive()} onClick={SettableHose}>{tabName}<VscTriangleDown className='arrow-down' /></a>
                     <ul className='sub-menu-item'>
                         <li className={table === 'Hose' ? 'submenu-list-active' : 'submenu-list'} onClick={SettableHose} >
                             <a ><span >HOSE</span></a>

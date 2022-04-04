@@ -1,13 +1,12 @@
-.header-home{
-    margin-bottom: 10px;
-}
+@import '../../../Assetss/Themedefinitions/Themedefine.scss';
 
-.header__home-dark {
-    background-color: #3c3c3cf2;
+.header{
+    @include themify($themes){
+        background-color: themed('headerColor');
+    }
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: 0.4s;
     .logo_header {
         cursor: url(../../../Assetss/img/cursor_home.png), auto;
         width: 250px;
@@ -15,29 +14,36 @@
     .date-clock{
         display: flex;
         justify-content: center;
-        color: #d8d8d8;
+        @include themify($themes){
+            color: themed('dateTimeColor');
+        }
         align-items: center;
         font-size: 1rem;
         line-height: 40px;
         margin-right: 25px;
         margin-left: 20px;
         .clock-icon{
-            color: #236abb; 
+            @include themify($themes){
+                color: themed('clockColor');
+            }
             transition: .4s;
             font-size: 1rem;
             margin-right: 4px;
         }
     }
-    .log-in{
+    .logout{
         display: flex;
         align-items: center;
         justify-content: center;
-        .log-in-btn {
+        .logout-btn {
             margin-right: 20px;
             width: 100px;
             border-radius: 3px;
-            background-color: #236abb;
-            color: #fff;
+            @include themify($themes){
+                background-color: themed('buttonLogout');
+                color:themed('textBtnLogout') ;
+            }
+            
             line-height: 20px;
             transition: all 0.15s;
             border: none;
@@ -47,19 +53,30 @@
         }
         .wrap{
             .toggle-info:hover{
-                color: #236abb;
+                @include themify($themes){
+                    color: themed('info-toggle');
+                }
                 border-radius: 6px;
                 cursor: pointer;
             }
+            .toggle-info{
+                @include themify($themes){
+                    color: themed('info-color');
+                }
+            }
         }
-        .log-in-btn:hover {
-            background-color: #347aca;
+        .logout-btn:hover {
+            @include themify($themes){
+                background-color: themed('log-outhover');
+            }
         }
-        .log-in-btn::after{
+        .logout-btn::after{
             content: "";
             display: block;
             position: absolute;
-            border-right:1px solid #2c2525;
+            @include themify($themes){
+              border-right: themed('logout-after');
+            }
             height: 40px;
             right: 65px;
             transform: translateY(-76%);
@@ -67,93 +84,6 @@
     }
 }
 
-.header__home-light {
-    background-color: #236abb;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: 0.4s;
-    .logo_header {
-        cursor: url(../../../Assetss/img/cursor_home.png), auto;
-        width: 250px;
-    }
-    .date-clock{
-        display: flex;
-        justify-content: center;
-        color: #fff;
-        align-items: center;
-        font-size: 1rem;
-        line-height: 40px;
-        margin-right: 25px;
-        margin-left: 20px;
-        .clock-icon{
-            color: #fff; 
-            transition: .4s;
-            font-size: 1rem;
-            margin-right: 4px;
-        }
-    }
-    .log-in{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .log-in-btn {
-            margin-right: 20px;
-            width: 100px;
-            border-radius: 3px;
-            background-color: #137fff;
-            color: #fff;
-            line-height: 20px;
-            transition: all 0.15s;
-            border: none;
-            outline: none;
-            cursor: pointer; 
-            padding: 4px;
-        }
-        .wrap{
-            .toggle-info:hover{
-                border-radius: 6px;
-                cursor: pointer;
-                color: #090ba0;
-
-            }
-        }   
-        .log-in-btn:hover {
-            background-color: #6286e0;
-        }
-        .log-in-btn::after{
-            content: "";
-            display: block;
-            position: absolute;
-            border-right: 1px solid #17457b;
-            height: 40px;
-            right: 65px;
-            transform: translateY(-76%);
-        } 
-    }
-}
-
-.container-dark{
-    background-color: #232323;
-    width: 100%;
-    height: 200px;
-    transition: 0.4s;
-    .home-img{
-        background: #232323;
-    }
-    
-}
-
-.container-light{
-    background-color: #e6e6e6;
-    width: 100%;
-    height: 200px;
-    transition: 0.4s;
-    .home-img{
-        background: #e6e6e6;;
-    }
-    
-}
 
 .toggle-info{
     display: flex;
@@ -297,6 +227,28 @@
     align-items: center;
 }
 
-.toggle-info{
+
+
+.moving-band{
+    margin-right: 25px;
+}
+
+.marquee-header{
     color: #fff;
+}
+
+.marquee-item{
+    font-size: 1rem;
+    color: #fff;
+}
+
+.marquee-item:nth-child(2n+0){
+    margin-right: 45px;
+    font-size: .8rem;
+}
+
+.marquee-item:nth-child(2n+1){
+    color: #e2b81f;
+    font-weight: 500;
+    font-size: .8rem;
 }
