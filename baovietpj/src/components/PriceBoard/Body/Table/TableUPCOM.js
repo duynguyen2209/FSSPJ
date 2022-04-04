@@ -90,7 +90,7 @@ export default function TableUPCOM() {
                         <td className={setColorBeside(item, item.bidPrice1, item.bidVol1)}>{CaculatePB(item.bidVol1, 1000, 2)}</td>
                         <td className={setColor(item, item.closePrice)}>{CaculatePB(item.closePrice, 1000, 2)}</td>
                         <td className={setColorBeside(item, item.closePrice)}>{CaculatePB(item.closeVol, 10, 0)}</td>
-                        <td className={setColorBeside(item, item.closePrice)}>{CaculatorPercent(item.changePercent)} {item.changePercent ? '%' : ''}</td>
+                        <td className={setColorBeside(item, item.closePrice)}>{item.changePercent > 0 && item.changePercent != undefined  ? '+' : ''}{CaculatorPercent(item.changePercent)} {item.changePercent ? '%' : ''}</td>
                         <td className={setColor(item, item.offerPrice1)}>{CaculatePB(item.offerPrice1, 1000, 2)}</td>
                         <td className={setColorBeside(item, item.offerPrice1)}>{CaculatePB(item.offerVol1, 1000, 2)}</td>
                         <td className={setColor(item, item.offerPrice2)}>{CaculatePB(item.offerPrice2, 1000, 2)}</td>
