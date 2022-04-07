@@ -59,6 +59,15 @@ function NavBar() {
         dispatch(TurnSlide(!slide))
         setSlide(!slide)
     }
+
+    const setActiveIcon = () => {
+        if(slideStatus){
+            return 'activeSlide'
+        }else{
+            return 'icon-toggle'
+        }
+    }
+
     return (
         <div className='Navbar'>
             <div className='search-box'>
@@ -112,7 +121,7 @@ function NavBar() {
                     {modal && <ModalBox closemodal={setModal}/>}
                 </ul>
                 <ul className='secondary icon-toggle-two'>
-                    <li className='icon-toggle' onClick={OnSlide}>
+                    <li className={setActiveIcon()} onClick={OnSlide}>
                         <a title={t('navbar.slide_show')} className='icon-secondary'><BsFillCameraVideoFill /></a>
                     </li>
                     <li className='icon-toggle'>
