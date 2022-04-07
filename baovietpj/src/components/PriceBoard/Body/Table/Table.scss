@@ -48,8 +48,12 @@
     }
 }
 
-tbody{
+.slide{
     animation: SlideDown ease 100s;
+}
+
+.stop{
+    animation: none;
 }
 
 .td-thamchieu{

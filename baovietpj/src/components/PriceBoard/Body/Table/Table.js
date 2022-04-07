@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 function Table() {
   const Table_tab = useSelector((state) => state.Login.table_tab)
   const { t } = useTranslation();
+  const SlideStatus = useSelector((state) => state.Slide.isShow)
   const Which_tab = () => {
     if (Table_tab === 'Hose') {
       return (<TableHOSE />)
@@ -19,6 +20,14 @@ function Table() {
       return (<TableHNX />)
     } else {
       return (<TableUPCOM />)
+    }
+  }
+
+  const setSlideShow = () => {
+    if(SlideStatus === true){
+      return 'slide'
+    }else{
+      return 'stop'
     }
   }
 
@@ -64,7 +73,7 @@ function Table() {
             <th col='2' rowSpan='1'>{t('table.sold')}</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={setSlideShow()}>
           {Which_tab()}
         </tbody>
       </table>

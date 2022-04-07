@@ -1,4 +1,4 @@
-import { LOG_IN, LOG_OUT, SWITCH_THEME, CHANGE_LANG, GET_USER, SWITCH_TAB, NAME_TAB } from "../Actions/ActionType"
+import { LOG_IN, LOG_OUT, SWITCH_THEME, CHANGE_LANG, GET_USER, SWITCH_TAB, NAME_TAB, SLIDE_SHOW } from "../Actions/ActionType"
 
 export const Loginredux = (data,) => {
     return {
@@ -49,3 +49,9 @@ export const ChangTabName = (data) => {
     }
 }
 
+export const TurnSlide = (data) => {
+    return{
+        type:SLIDE_SHOW,
+        payload:data
+    }
+}

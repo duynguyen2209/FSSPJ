@@ -7,7 +7,7 @@ import { BsFillCameraVideoFill, BsThreeDotsVertical } from 'react-icons/bs'
 import './NavBar.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next'
-import { ChangTabName, SwitchTab } from '../../../Redux/Actions/action';
+import { ChangTabName, SwitchTab, TurnSlide } from '../../../Redux/Actions/action';
 import ModalBox from './ModalBox';
 
 function NavBar() {
@@ -53,6 +53,12 @@ function NavBar() {
         }
     }
 
+    const slideStatus = useSelector((state)=> state.Slide.isShow)
+    const [slide,setSlide] = useState(slideStatus)
+    const OnSlide = () => {
+        dispatch(TurnSlide(!slide))
+        setSlide(!slide)
+    }
     return (
         <div className='Navbar'>
             <div className='search-box'>
@@ -106,7 +112,7 @@ function NavBar() {
                     {modal && <ModalBox closemodal={setModal}/>}
                 </ul>
                 <ul className='secondary icon-toggle-two'>
-                    <li className='icon-toggle'>
+                    <li className='icon-toggle' onClick={OnSlide}>
                         <a title={t('navbar.slide_show')} className='icon-secondary'><BsFillCameraVideoFill /></a>
                     </li>
                     <li className='icon-toggle'>

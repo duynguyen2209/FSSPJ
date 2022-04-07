@@ -1,4 +1,4 @@
-import { LOG_IN, LOG_OUT, SWITCH_THEME, CHANGE_LANG, GET_USER, SWITCH_TAB, NAME_TAB } from '../Actions/ActionType'
+import { LOG_IN, LOG_OUT, SWITCH_THEME, CHANGE_LANG, GET_USER, SWITCH_TAB, NAME_TAB, SLIDE_SHOW } from '../Actions/ActionType'
 const initialSate = {
     Login: {
         isLogin: false,
@@ -13,7 +13,7 @@ const initialSate = {
     Lang: {
         langis: 'vie'
     },
-    ShowHide: {
+    Slide: {
         isShow: false
     },
 
@@ -55,6 +55,16 @@ const Reducer = (state = initialSate, action) => {
                     ...state.Login,
                     usernumber: action.payload.usernumber,
                     username: action.payload.username
+                }
+            }
+        }
+
+        case SLIDE_SHOW: {
+            return{
+                ...state,
+                Slide:{
+                    ...state.Slide,
+                    isShow:action.payload
                 }
             }
         }
