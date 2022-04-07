@@ -1,24 +1,24 @@
 import React, { useState } from 'react'
-import './Table.scss';  
+import './Table.scss';
 import TableHOSE from '../Table/TableHOSE'
 import TableVN30 from '../Table/TableVN30'
 import TableHNX from '../Table/TableHNX'
 import TableUPCOM from '../Table/TableUPCOM'
-import {useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 function Table() {
   const Table_tab = useSelector((state) => state.Login.table_tab)
   const { t } = useTranslation();
-  const Which_tab  = () => {
-    if(Table_tab === 'Hose'){
-      return (<TableHOSE/>)
-    }else if(Table_tab === 'VN30'){
-      return (<TableVN30/>)
-    }else if(Table_tab === 'HNX'){
-      return (<TableHNX/>)
-    }else{
-      return( <TableUPCOM/>)
+  const Which_tab = () => {
+    if (Table_tab === 'Hose') {
+      return (<TableHOSE />)
+    } else if (Table_tab === 'VN30') {
+      return (<TableVN30 />)
+    } else if (Table_tab === 'HNX') {
+      return (<TableHNX />)
+    } else {
+      return (<TableUPCOM />)
     }
   }
 
@@ -64,7 +64,9 @@ function Table() {
             <th col='2' rowSpan='1'>{t('table.sold')}</th>
           </tr>
         </thead>
-        {Which_tab()}
+        <tbody>
+          {Which_tab()}
+        </tbody>
       </table>
     </>
   )

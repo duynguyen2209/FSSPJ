@@ -68,6 +68,7 @@ export const highlight = (currentValue, value, item) => {
 
 export function TableView(item) {
     const [checked, setChecked] = useState(false)
+
     function InfoCompany(item) {
         return (
             <div className='infmodalBg'>
@@ -84,10 +85,9 @@ export function TableView(item) {
     }
     return (
         <>
-            <tbody>
                 <tr>
                     <td className={setColor(item, item.closePrice)} onClick={()=>setChecked(true)} scope="row" title={item.FullName}>{item.symbol}</td>
-                    {checked && <InfoCompany />}
+                    {checked && <InfoCompany item={item}/>}
                     <td className="td-thamchieu">{CaculatePB(item.reference, 1000, 2)}</td>
                     <td className="td-tran">{CaculatePB(item.ceiling, 1000, 2)}</td>
                     <td className="td-san">{CaculatePB(item.floor, 1000, 2)}</td>
@@ -115,7 +115,6 @@ export function TableView(item) {
                     <td className="noneChangeColor">{CaculatePB(item.foreignBuy, 1000, 2)}</td>
                     <td className="noneChangeColor">{CaculatePB(item.foreignSell, 1000, 2)}</td>
                 </tr>
-            </tbody>
         </>
     )
 }

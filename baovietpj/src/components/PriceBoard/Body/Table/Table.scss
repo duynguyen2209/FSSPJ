@@ -16,6 +16,7 @@
     .fix-sticky{
         position: sticky ;     
         top: 234px;
+        z-index: 100;
         width: 100%;
         border-collapse: collapse;
         @include themify($themes){
@@ -39,11 +40,17 @@
             background-color: themed('tablehover');
         }
     }
+    tbody tr:nth-child(odd){
+        background-color:#000000;
+    }
+    tbody tr:nth-child(even){
+        background-color:#181818;
+    }
 }
 
-// tbody{
-//     animation: SlideDown ease 100s;
-// }
+tbody{
+    animation: SlideDown ease 100s;
+}
 
 .td-thamchieu{
     @include themify($themes){
@@ -72,22 +79,27 @@
 
 .red-color{
     color:#fd0000 ;
+    animation: backGroundRed 1s forwards ; 
 }
 
 .green-color{
     color: #08e003 ;
+    animation: backGroundGreen 1s ; 
 }
 
 .yellow-color{
     color: #f3c117 ;
+    animation: backGroundYellow 1s ; 
 }
 
 .purple-color{
     color: #d433a9 ;
+    animation: backGroundPurple 1s ; 
 }
 
 .blue-color{
-    color: #00c5c5
+    color: #00c5c5;
+    animation: backGroundBlue 1s ; 
 }
 
 .noneChangeColor{
@@ -97,26 +109,58 @@
     text-align: right;
 }
 
-.backGroundGreen{
-    background-color: #08e003;
-    color: rgb(255, 255, 255);
-}
-.backGroundBlue{
-    background-color: #00c5c5;
-    color: #333;
-}
-.backGroundYellow{
-    background-color: #f3c117;
-    color: #333;
-}
-.backGroundRed{
-    background-color: #fd0000;
-    color: #333;
-}
-.backGroundPurple{
-    background-color: #d433a9;
-    color: #333;
-}
+   
+// @keyframes backGroundGreen {
+//     50% {
+//         background-color: rgba(8, 224, 3,0.8);
+//         color: rgb(255, 255, 255);
+//     }
+//     100% {
+//       background: transparent;
+//     }
+//   }
+
+// @keyframes backGroundBlue {
+// 50% {
+//     background-color: rgba(0, 197, 197,0.8);
+//     color: #fff;
+// }
+// 100% {
+//     background: transparent;
+// }
+// }
+
+// @keyframes backGroundYellow {
+// 50% {
+//     background-color: rgba(243, 193, 230.8);
+//     color: #fff;
+// }
+// 100% {
+//     background: transparent;
+// }
+// }
+
+// @keyframes backGroundRed {
+// 50% {
+//     background-color: rgba(253, 0, 0,0.8);
+//     color: #fff;
+// }
+// 100% {
+//     background: transparent;
+// }
+// }
+
+// @keyframes backGroundPurple {
+// 50% {
+//     background-color: rgb(212, 51, 169,0.8);
+//     color: #fff;
+// }
+// 100% {
+//     background: transparent;
+// }
+// }
+
+
 
 @keyframes SlideDown {
     from {
