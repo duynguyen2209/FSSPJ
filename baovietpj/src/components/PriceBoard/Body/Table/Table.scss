@@ -56,6 +56,16 @@
     animation: none;
 }
 
+@keyframes SlideDown {
+    from {
+        transform: translateY(0)
+    }
+    to {
+        transform: translateY(-1000px)
+    }
+    
+}
+
 .td-thamchieu{
     @include themify($themes){
         color: themed('td-thamchieu');
@@ -113,15 +123,7 @@
     text-align: right;
 }
 
-@keyframes SlideDown {
-    from {
-        transform: translateY(0)
-    }
-    to {
-        transform: translateY(-1000px)
-    }
-    
-}
+
 // @keyframes backGroundGreen {
 //     50% {
 //         background-color: rgba(8, 224, 3,0.8);

@@ -1,15 +1,14 @@
 .ModalBg{
     position: fixed;
-    z-index: 119;
     top: 0px;
     left: 0px;
     height: 1000vh;
     width: 1000vw;
     background-color: rgba(0, 0, 0, 0.6);
+    z-index: 119;
 }
 
 .Modal-box{
-    z-index: 119;
     width: 700px;
     height: 400px;
     position: fixed;
