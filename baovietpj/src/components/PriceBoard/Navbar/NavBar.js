@@ -8,16 +8,16 @@ import './NavBar.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next'
 import { ChangTabName, SwitchTab } from '../../../Redux/Actions/action';
+import ModalBox from './ModalBox';
 
 function NavBar() {
-    const themeMode = useSelector((state) => state.Theme.themeMode)
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const Table_tab = useSelector((state) => state.Login.table_tab)
     const [table, setTable] = useState(Table_tab)
     const TabHoseVn30 = useSelector((state) => state.Login.TabName_)
     const [tabName, settabName] = useState(TabHoseVn30)
-
+    const [modal,setModal] = useState(false)
     const SettableHose = () => {
         setTable('Hose')
         dispatch(SwitchTab('Hose'))
@@ -100,9 +100,10 @@ function NavBar() {
             </ul>
             <div className='right-icon'>
                 <ul className='secondary'>
-                    <li >
+                    <li onClick={()=>(setModal(true))}>
                         <a title={t('navbar.threedot')} className='icon-three-dot'><BsThreeDotsVertical /></a>
                     </li>
+                    {modal && <ModalBox closemodal={setModal}/>}
                 </ul>
                 <ul className='secondary icon-toggle-two'>
                     <li className='icon-toggle'>

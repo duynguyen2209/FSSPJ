@@ -1,0 +1,30 @@
+.infmodalBg{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 1000vh;
+    width: 1000vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+}
+
+.Modalinfo-box{
+    width: 700px;
+    height: 400px;
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    margin: unset;
+    // background-color: rgb(34, 34, 34);
+    border-radius: 10px;
+    z-index: 98;
+    padding: 0px;
+    box-shadow: rgb(0 0 0 / 14%) 0px 0px 4px, rgb(0 0 0 / 28%) 0px 4px 8px;
+    overflow-x: hidden;
+    opacity: 1;
+    border: 2px solid rgb(136, 136, 136);
+    max-height: 500px;
+    transform: translate(-50%, -50%);
+    display: block;
+    color: #fff;
+}

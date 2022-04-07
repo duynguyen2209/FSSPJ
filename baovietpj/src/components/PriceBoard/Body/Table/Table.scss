@@ -12,6 +12,7 @@
     border-collapse: collapse;
     margin-top: 195px;
     transition: .4s;
+
     .fix-sticky{
         position: sticky ;     
         top: 234px;
@@ -39,6 +40,10 @@
         }
     }
 }
+
+// tbody{
+//     animation: SlideDown ease 100s;
+// }
 
 .td-thamchieu{
     @include themify($themes){
@@ -92,6 +97,37 @@
     text-align: right;
 }
 
-.backGroundChange{
+.backGroundGreen{
     background-color: #08e003;
+    color: rgb(255, 255, 255);
+}
+.backGroundBlue{
+    background-color: #00c5c5;
+    color: #333;
+}
+.backGroundYellow{
+    background-color: #f3c117;
+    color: #333;
+}
+.backGroundRed{
+    background-color: #fd0000;
+    color: #333;
+}
+.backGroundPurple{
+    background-color: #d433a9;
+    color: #333;
+}
+
+@keyframes SlideDown {
+    from {
+        transform: translateY(0)
+    }
+    to {
+        transform: translateY(-1000px)
+    }
+    
+}
+
+.none-bg{
+    background-color: transparent;
 }

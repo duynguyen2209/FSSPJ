@@ -1,8 +1,18 @@
+.ModalBg{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 1000vh;
+    width: 1000vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+}
+
 .Modal-box{
     width: 700px;
-    height: auto;
+    height: 400px;
     position: fixed;
-    top: 50%;
+    top: 60%;
     left: 50%;
     margin: unset;
     background-color: rgb(34, 34, 34);
@@ -28,10 +38,16 @@ h2{
     right: 6px;
     border-radius: 2px;
     top: 2px;
-    border: 1px solid;
+    border: none;
     position: absolute;
-    color: rgb(177 61 61);
+    color: rgb(255, 255, 255);
     z-index: 99;
+    padding: 4px;
+    background-color: transparent;
+}
+
+.btn-close:hover{
+    color: rgb(177 61 61);
 }
 
 .nav-tab{
@@ -62,13 +78,17 @@ h2{
 }
 
 .col-option{
-    margin: 10px 0 10px 25px;
+    margin: 10px 0 20px 25px;
     list-style-type: none;
 }
 
 .con-sub{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="checkbox"]{
+    margin-right: 5px;
 }

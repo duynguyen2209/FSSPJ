@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ModalBox.scss'
-function ModalBox() {
+
+function ModalBox({closemodal}) {
+  const [checked,setChecked] = useState(true)
+  const handleChange = () => {
+    setChecked(!checked)
+  }
   return (
-    <div className='Modal-box'>
+    <div className='ModalBg'>
+      <div className='Modal-box'>
       <h2>Ẩn/Hiển các cột</h2>
-      <button className='btn-close'>[ X ]</button>
+      <button className='btn-close' onClick={()=>closemodal(false)}>[ X ]</button>
       <div className='Showhidetab'>
         <div className='Tabcontainer'>
           <ul className='nav-tab'>
@@ -27,7 +33,10 @@ function ModalBox() {
             <ul>
               <div className='col-config'>
                 <li className='col-option'>
-                  <input type="checkbox" />
+                  <input type="checkbox" 
+                  checked={checked}
+                  onChange={handleChange}
+                  />
                   <label>Mã CK</label>
                 </li>
                 <li className='col-option'>
@@ -173,6 +182,7 @@ function ModalBox() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }
