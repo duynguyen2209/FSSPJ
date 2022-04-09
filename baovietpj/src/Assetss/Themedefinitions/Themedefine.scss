@@ -36,12 +36,14 @@ $themes: (
     borderTable: 1px solid #d2d2d2,
     colColor:#ddd,
     tableColortxt:#333,
-    tablehover:#dfdbdb,
+    tablehover:#d6d4d4,
     td-thamchieu:#d4b001,
     td-tran:#ce0ece,
     tr-san:#00c5c5,
     totalTrading:#333,
     bg3col:#e8e8e8,
+    bg-odd:#ffffff,
+    bg-even:rgb(240, 238, 238),
     /*Table*/
 
     btn-setOrderhover:#1d5799,
@@ -91,6 +93,8 @@ $themes: (
     tr-san:#00c5c5,
     totalTrading:#fff,
     bg3col:#2e2e2e,
+    bg-odd:#000000,
+    bg-even:#181818,
     /*Table*/
 
     btn-setOrderhover:#1d5799,

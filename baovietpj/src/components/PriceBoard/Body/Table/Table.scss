@@ -37,19 +37,23 @@
     }
     tbody tr:hover{
         @include themify($themes){
-            background-color: themed('tablehover');
+            background-color: themed('tablehover') !important;
         }
     }
     tbody tr:nth-child(odd){
-        background-color:#000000;
+        @include themify($themes){
+            background-color: themed('bg-odd');
+        };
     }
     tbody tr:nth-child(even){
-        background-color:#181818;
+        @include themify($themes){
+            background-color: themed('bg-even');
+        };
     }
 }
 
 .slide{
-    animation: SlideDown ease-in-out 14s;
+    animation: SlideDown ease-out 17s;
 }
 
 .stop{
@@ -124,55 +128,31 @@
 }
 
 
-// @keyframes backGroundGreen {
-//     50% {
-//         background-color: rgba(8, 224, 3,0.8);
-//         color: rgb(255, 255, 255);
-//     }
-//     100% {
-//       background: transparent;
-//     }
-//   }
+.backGroundGreen {
+    background-color: rgba(8, 224, 3,0.8);
+    color: #fff
+}  
+       
+       
+.backGroundBlue {
+    background-color: rgba(0, 197, 197,0.8);
+    color: #fff;
+}
 
-// @keyframes backGroundBlue {
-// 50% {
-//     background-color: rgba(0, 197, 197,0.8);
-//     color: #fff;
-// }
-// 100% {
-//     background: transparent;
-// }
-// }
+.backGroundYellow {
+    background-color: rgba(243, 193, 230.8);
+    color: #fff;
+}
 
-// @keyframes backGroundYellow {
-// 50% {
-//     background-color: rgba(243, 193, 230.8);
-//     color: #fff;
-// }
-// 100% {
-//     background: transparent;
-// }
-// }
+.backGroundRed {
+    background-color: rgba(253, 0, 0,0.8);
+    color: #fff;
+}
 
-// @keyframes backGroundRed {
-// 50% {
-//     background-color: rgba(253, 0, 0,0.8);
-//     color: #fff;
-// }
-// 100% {
-//     background: transparent;
-// }
-// }
-
-// @keyframes backGroundPurple {
-// 50% {
-//     background-color: rgb(212, 51, 169,0.8);
-//     color: #fff;
-// }
-// 100% {
-//     background: transparent;
-// }
-// }
+.backGroundPurple {
+    background-color: rgb(212, 51, 169,0.8);
+    color: #fff;
+}
 
 
 .none-bg{

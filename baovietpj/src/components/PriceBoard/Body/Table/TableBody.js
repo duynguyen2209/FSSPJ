@@ -16,30 +16,42 @@ export const CaculatorPercent = (item) => {
     }
 }
 export const setColor = (item, itemName) => {
+    let className =''
     if (itemName == item.reference) {
-        return 'yellow-color '
+        className = 'yellow-color '
     } else if (itemName == item.ceiling) {
-        return 'purple-color'
+        className = 'purple-color'
     } else if (itemName == item.floor) {
-        return 'blue-color'
+        className = 'blue-color'
     } else if (itemName > item.reference) {
-        return 'green-color '
+        className = 'green-color '
     } else {
-        return 'red-color'
+        className = 'red-color'
     }
+
+    // if(item[name + 'ClassHightlight']){
+    //     className = className + ' ' + item[name + 'ClassHightlight'] 
+    // }
+    return className
 }
-export const setColorBeside = (item, Prc) => {
+export const setColorBeside = ( item,Prc) => {
+    let className =''
     if (Prc == item.reference) {
-        return 'yellow-color'
+        className =  'yellow-color'
     } else if (Prc == item.ceiling) {
-        return 'purple-color'
+        className =  'purple-color'
     } else if (Prc == item.floor) {
-        return 'blue-color'
+        className =  'blue-color'
     } else if (Prc > item.reference) {
-        return 'green-color'
+        className =  'green-color'
     } else {
-        return 'red-color'
+        className =  'red-color'
     }
+
+    // if(item[name + 'ClassHightlight']){
+    //     className = className + ' ' + item[name + 'ClassHightlight'] 
+    // }
+    return className
 }
 
 export const randomValue = (max, min) => {
@@ -47,23 +59,6 @@ export const randomValue = (max, min) => {
     value = parseFloat(value / 1000).toFixed(2) * 1000
     return value
 }
-
-export const highlight = (currentValue, value, item) => {
-    if (currentValue === value) {
-        return ''
-    } else if (currentValue !== value && value == item.reference) {
-        return 'backGroundYellow'
-    } else if (currentValue !== value && value == item.ceiling) {
-        return 'backGroundPurple'
-    } else if (currentValue !== value && value == item.floor) {
-        return 'backGroundBlue'
-    } else if (currentValue !== value && value > item.reference) {
-        return 'backGroundGreen'
-    } else {
-        return 'backGroundRed'
-    }
-}
-
 
 
 export function TableView(item) {
@@ -81,6 +76,7 @@ export function TableView(item) {
                         <h3 style={{ textAlign: 'center' }}>Mã chứng khoán: {item.symbol} </h3>
                         <br />
                         <div className='wrapper-modalinfo'>
+                            <div className='item-text'>Tên công ty: {item.FullName}</div>
                             <div className='item-text'>Giá: {item.closePrice}</div>
                             <div className='item-text'>Khối lượng: {item.closeVol}</div>
                             <div className='item-text'>Phần trăm: {item.changePercent} %</div>
