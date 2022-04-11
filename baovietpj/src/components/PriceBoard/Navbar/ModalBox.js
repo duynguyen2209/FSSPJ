@@ -11,7 +11,7 @@ function ModalBox({closemodal}) {
       <div className='Modal-box'>
       <h2>Ẩn/Hiển các cột</h2>
       <button className='btn-close' onClick={()=>closemodal(false)}>[ X ]</button>
-      <div className='Showhidetab'>
+      <div>
         <div className='Tabcontainer'>
           <ul className='nav-tab'>
             <li className='modal-tab-active'>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import logo_header from '../../../Assetss/img/logo_header.png';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Logoutredux, SwitchTheme, SwitchLang, GetUser, ChangTabName } from '../../../Redux/Actions/action';
+import { Logoutredux, SwitchTheme, SwitchLang, GetUser } from '../../../Redux/Actions/action';
 import { ImClock } from 'react-icons/im';
 import { CgProfile } from 'react-icons/cg';
 import { VscTriangleDown } from 'react-icons/vsc';
@@ -36,7 +36,7 @@ function Header() {
   };
 
   const { t, i18n } = useTranslation();
-  const langMode = useSelector((state) => state.Lang.langis)
+  const langMode = useSelector((state) => state.Lang.langis)  
   const [lang, setLang] = useState(langMode)
   const handleLang = (e) => {
     setLang(e.target.value)
@@ -45,6 +45,9 @@ function Header() {
       e.target.value
     ))
   }
+  useEffect(()=> {
+    i18n.changeLanguage(langMode);
+  },[])
 
   let userLogout = { usernumber: '', username: '' }
   const dispatch = useDispatch();
@@ -186,7 +189,7 @@ function Header() {
             </div>
           </div>
         </div>
-        <div >  {showlist ? <Accountdropdown /> : ''}</div>
+        <div >  {showlist && <Accountdropdown />}</div>
       </header>
 
     </div>

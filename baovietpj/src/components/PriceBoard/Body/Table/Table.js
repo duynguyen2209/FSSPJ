@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import './Table.scss';
 import TableHOSE from '../Table/TableHOSE'
 import TableVN30 from '../Table/TableVN30'
@@ -9,8 +9,12 @@ import { useTranslation } from 'react-i18next';
 
 function Table() {
   const Table_tab = useSelector((state) => state.Login.table_tab)
-  const { t } = useTranslation();
+  const langMode = useSelector((state) => state.Lang.langis)
+  const { t, i18n } = useTranslation();
   const SlideStatus = useSelector((state) => state.Slide.isShow)
+  useEffect(()=> {
+    i18n.changeLanguage(langMode);
+  },[])
   const Which_tab = () => {
     if (Table_tab === 'Hose') {
       return (<TableHOSE />)

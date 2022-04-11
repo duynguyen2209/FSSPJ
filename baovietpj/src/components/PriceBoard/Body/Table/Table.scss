@@ -38,6 +38,7 @@
     tbody tr:hover{
         @include themify($themes){
             background-color: themed('tablehover') !important;
+            transition: .2s linear;
         }
     }
     tbody tr:nth-child(odd){
@@ -97,7 +98,7 @@
 
 .red-color{
     color:#fd0000 ;
-    animation: backGroundRed 1s forwards ; 
+    animation: backGroundRed 1s ; 
 }
 
 .green-color{
@@ -127,6 +128,56 @@
     text-align: right;
 }
 
+@keyframes backGroundGreen {
+    50% {
+        background: rgba(98, 173, 98, 0.8);
+        color: #fff;
+      }
+      100% {
+        background: transparent;
+      }
+}  
+       
+       
+@keyframes backGroundBlue {
+    50% {
+        background: rgba(20, 147, 172, 0.8);
+        color: #fff;
+      }
+      100% {
+        background: transparent;
+      }
+}
+
+@keyframes backGroundYellow {
+    50% {
+        background: rgba(237, 239, 93, 0.8);
+        color: #fff;
+      }
+      100% {
+        background: transparent;
+      }
+}
+
+@keyframes backGroundRed {
+    50% {
+        background: rgb(230, 78, 78);
+        color: #fff;
+      }
+      100% {
+        background: transparent;
+      }
+}
+
+@keyframes backGroundPurple {
+    50% {
+        background: rgba(182, 19, 147, 0.8);
+        color: #fff;
+      }
+      100% {
+        background: transparent;
+      }
+}
 
 .backGroundGreen {
     background-color: rgba(8, 224, 3,0.8);
@@ -135,12 +186,12 @@
        
        
 .backGroundBlue {
-    background-color: rgba(0, 197, 197,0.8);
+    background-color: rgba(89, 164, 226, 0.8);
     color: #fff;
 }
 
 .backGroundYellow {
-    background-color: rgba(243, 193, 230.8);
+    background-color: rgba(243, 193, 23,0.8);
     color: #fff;
 }
 

@@ -4,29 +4,76 @@ import upcom_instruments from '../../../../Datafile/PriceBoardData/upcom_instrum
 import {randomValue,TableView} from './TableBody';
 
 export default function TableUPCOM() {
-    const start = Math.floor(Math.random() * 10)
+    const start = 0
     const end = Math.floor(Math.random() * (20 - 10)) + 10
     let UPCOMData = upcom_instruments.d;
     let get20Data = UPCOMData.slice(0, 20)
 
+    const getHighlight = (currtenValue, value, data) => {
+        let className = ''
+        if (currtenValue === value) {
+            className = ''
+        } else if (currtenValue !== value && value == data.reference) {
+            className = 'backGroundYellow'
+        } else if (currtenValue !== value && value == data.ceiling) {
+            className = 'backGroundPurple'
+        } else if (currtenValue !== value && value == data.floor) {
+            className = 'backGroundBlue'
+        } else if (currtenValue !== value && value > data.reference) {
+            className = 'backGroundGreen'
+        } else {
+            className = 'backGroundRed'
+        }
+        return className;
+    }
+
     const ChangeData = () => {
-        get20Data.slice(start, end).map((data) => {
+        const randomIndex = (max, min) => {
+            let value = Math.floor(Math.random() * (max - min + 1) + min)
+            return value
+        }
+        const newList = [
+            get20Data[randomIndex(19, 0)],
+            get20Data[randomIndex(19, 0)],
+            get20Data[randomIndex(19, 0)],
+            get20Data[randomIndex(19, 0)],
+            get20Data[randomIndex(19, 0)]
+        ]
+
+        newList.map((data) => {
+            
             if (data.bidPrice2 && data.bidPrice3 &&
-                data.offerPrice1 && data.offerPrice2 && data.offerPrice3 &&
-                data.closePrice != undefined) {
-                return(
-                    setData(get20Data.slice(0,10)),
-                    data.bidPrice3 = randomValue(data.ceiling,data.floor),
-                    data.bidPrice2 = randomValue(data.ceiling,data.floor),
-                    data.offerPrice1 = randomValue(data.ceiling,data.floor),
-                    data.offerPrice2 = randomValue(data.ceiling,data.floor),
-                    data.offerPrice3 = randomValue(data.ceiling,data.floor),
-                    data.closePrice = randomValue(data.ceiling,data.floor)
-                )
+                data.offerPrice1 && data.offerPrice2 && data.offerPrice3 !== undefined) {
+                let bidPrice3 = randomValue(data.ceiling, data.floor)
+                let bidPrice2 = randomValue(data.ceiling, data.floor)
+                let offerPrice1 = randomValue(data.ceiling, data.floor)
+                let offerPrice2 = randomValue(data.ceiling, data.floor)
+                let offerPrice3 = randomValue(data.ceiling, data.floor)
+                const Listproperty = [
+                    data.bidPrice3 = bidPrice3,
+                    data.bidPrice2 = bidPrice2,
+                    data.offerPrice1 = offerPrice1,
+                    data.offerPrice2 = offerPrice2,
+                    data.offerPrice3 = offerPrice3
+                ]
+
+                return (
+                    data.bidPrice3_ClassHightlight = getHighlight(data.bidPrice3, bidPrice3, data),
+                    data.bidPrice2_ClassHightlight = getHighlight(data.bidPrice2, bidPrice2, data),
+                    data.offerPrice1_ClassHightlight = getHighlight(data.bidPrice1, offerPrice1, data),
+                    data.offerPrice2_ClassHightlight = getHighlight(data.offerPrice2, offerPrice2, data),
+                    data.offerPrice3_ClassHightlight = getHighlight(data.offerPrice3, offerPrice3, data))
+                  
+
             } else {
                 return ''
             }
         })
+        // setTimeout(() => {
+        //     clearHightlight()
+        // }, 1000)
+        setData(get20Data.slice(0, 10))
+
     }
     const [data, setData] = useState(get20Data)
     useEffect(() => {
@@ -45,3 +92,5 @@ export default function TableUPCOM() {
         </>
     )
 }
+
+

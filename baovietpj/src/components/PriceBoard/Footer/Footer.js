@@ -1,12 +1,16 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { RiLineChartLine } from 'react-icons/ri';
 import { HiShoppingCart } from 'react-icons/hi';
 import './Footer.scss'
 import { useTranslation } from 'react-i18next';
-
+import {useSelector} from 'react-redux'
 
 function Footer() {
     const { t, i18n } = useTranslation();
+    const currentLang = useSelector((state) => state.Lang.langis)  
+    useEffect(()=> {
+        i18n.changeLanguage(currentLang);
+      },[])
     return (
         <div className='footer-sticky'>
             <div className='footer-info'>
