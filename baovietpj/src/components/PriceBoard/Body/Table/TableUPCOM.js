@@ -2,13 +2,18 @@ import React, { useEffect, useState } from "react";
 import './Table.scss';
 import upcom_instruments from '../../../../Datafile/PriceBoardData/upcom_instruments.json';
 import {randomValue,TableView} from './TableBody';
+import $ from 'jquery';
 
 export default function TableUPCOM() {
-    const start = 0
-    const end = Math.floor(Math.random() * (20 - 10)) + 10
     let UPCOMData = upcom_instruments.d;
     let get20Data = UPCOMData.slice(0, 20)
-
+    const clearHightlight = () => {
+        $(".table tbody tr td").removeClass('backGroundYellow')
+        $(".table tbody tr td").removeClass('backGroundPurple')
+        $(".table tbody tr td").removeClass('backGroundBlue')
+        $(".table tbody tr td").removeClass('backGroundGreen')
+        $(".table tbody tr td").removeClass('backGroundRed')
+    }
     const getHighlight = (currtenValue, value, data) => {
         let className = ''
         if (currtenValue === value) {
@@ -49,29 +54,28 @@ export default function TableUPCOM() {
                 let offerPrice1 = randomValue(data.ceiling, data.floor)
                 let offerPrice2 = randomValue(data.ceiling, data.floor)
                 let offerPrice3 = randomValue(data.ceiling, data.floor)
-                const Listproperty = [
-                    data.bidPrice3 = bidPrice3,
-                    data.bidPrice2 = bidPrice2,
-                    data.offerPrice1 = offerPrice1,
-                    data.offerPrice2 = offerPrice2,
-                    data.offerPrice3 = offerPrice3
-                ]
-
+                
                 return (
                     data.bidPrice3_ClassHightlight = getHighlight(data.bidPrice3, bidPrice3, data),
                     data.bidPrice2_ClassHightlight = getHighlight(data.bidPrice2, bidPrice2, data),
                     data.offerPrice1_ClassHightlight = getHighlight(data.bidPrice1, offerPrice1, data),
                     data.offerPrice2_ClassHightlight = getHighlight(data.offerPrice2, offerPrice2, data),
-                    data.offerPrice3_ClassHightlight = getHighlight(data.offerPrice3, offerPrice3, data))
+                    data.offerPrice3_ClassHightlight = getHighlight(data.offerPrice3, offerPrice3, data)),
+
+                    data.bidPrice3 = bidPrice3,
+                    data.bidPrice2 = bidPrice2,
+                    data.offerPrice1 = offerPrice1,
+                    data.offerPrice2 = offerPrice2,
+                    data.offerPrice3 = offerPrice3
                   
 
             } else {
                 return ''
             }
         })
-        // setTimeout(() => {
-        //     clearHightlight()
-        // }, 1000)
+        setTimeout(() => {
+            clearHightlight()
+        }, 1000)
         setData(get20Data.slice(0, 10))
 
     }

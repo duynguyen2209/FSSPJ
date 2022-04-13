@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
 import './Table.scss';
 import vn30_instruments from '../../../../Datafile/PriceBoardData/vn30_instruments.json';
-import {randomValue,TableView} from './TableBody';
+import { randomValue, TableView } from './TableBody';
+import $ from 'jquery';
 
 export default function TableVN30() {
-    // const start = Math.floor(Math.random() * 10)
-    // const end = Math.floor(Math.random() * (20 - 10)) + 10
     let VN30Data = vn30_instruments.d;
     let get20Data = VN30Data.slice(0, 20)
-
+    const clearHightlight = () => {
+        $(".table tbody tr td").removeClass('backGroundYellow')
+        $(".table tbody tr td").removeClass('backGroundPurple')
+        $(".table tbody tr td").removeClass('backGroundBlue')
+        $(".table tbody tr td").removeClass('backGroundGreen')
+        $(".table tbody tr td").removeClass('backGroundRed')
+    }
     const getHighlight = (currentValue, value, data) => {
         let className = ''
         if (currentValue === value) {
@@ -26,7 +31,7 @@ export default function TableVN30() {
         }
         return className;
     }
-    
+
     const ChangeData = () => {
         const randomIndex = (max, min) => {
             let value = Math.floor(Math.random() * (max - min + 1) + min)
@@ -41,7 +46,7 @@ export default function TableVN30() {
         ]
 
         newList.map((data) => {
-            
+
             if (data.bidPrice2 && data.bidPrice3 &&
                 data.offerPrice1 && data.offerPrice2 && data.offerPrice3 !== undefined) {
                 let bidPrice3 = randomValue(data.ceiling, data.floor)
@@ -49,29 +54,30 @@ export default function TableVN30() {
                 let offerPrice1 = randomValue(data.ceiling, data.floor)
                 let offerPrice2 = randomValue(data.ceiling, data.floor)
                 let offerPrice3 = randomValue(data.ceiling, data.floor)
-                const Listproperty = [
-                    data.bidPrice3 = bidPrice3,
-                    data.bidPrice2 = bidPrice2,
-                    data.offerPrice1 = offerPrice1,
-                    data.offerPrice2 = offerPrice2,
-                    data.offerPrice3 = offerPrice3
-                ]
+
 
                 return (
                     data.bidPrice3_ClassHightlight = getHighlight(data.bidPrice3, bidPrice3, data),
                     data.bidPrice2_ClassHightlight = getHighlight(data.bidPrice2, bidPrice2, data),
                     data.offerPrice1_ClassHightlight = getHighlight(data.bidPrice1, offerPrice1, data),
                     data.offerPrice2_ClassHightlight = getHighlight(data.offerPrice2, offerPrice2, data),
-                    data.offerPrice3_ClassHightlight = getHighlight(data.offerPrice3, offerPrice3, data))
-                  
+                    data.offerPrice3_ClassHightlight = getHighlight(data.offerPrice3, offerPrice3, data)),
+
+                    data.bidPrice3 = bidPrice3,
+                    data.bidPrice2 = bidPrice2,
+                    data.offerPrice1 = offerPrice1,
+                    data.offerPrice2 = offerPrice2,
+                    data.offerPrice3 = offerPrice3
+
+
 
             } else {
                 return ''
             }
         })
-        // setTimeout(() => {
-        //     clearHightlight()
-        // }, 1000)
+        setTimeout(() => {
+            clearHightlight()
+        }, 1000)
         setData(get20Data.slice(0, 10))
 
     }

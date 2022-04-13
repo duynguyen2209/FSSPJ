@@ -29,8 +29,8 @@ export const setColor = (name, item, itemName) => {
         className = 'red-color'
     }
 
-    if (item[name + 'ClassHightlight']) {
-        className = className + ' ' + item[name + 'ClassHightlight']
+    if (item[name + '_ClassHightlight']) {
+        className = className + ' ' + item[name + '_ClassHightlight']
     }
     return className
 }

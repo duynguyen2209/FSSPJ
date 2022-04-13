@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import './Table.scss';
 import hnx_instruments from '../../../../Datafile/PriceBoardData/hnx_instruments.json';
 import { randomValue, TableView } from './TableBody';
+import $ from 'jquery';
 export default function TableHNX() {
 
     let HNXData = hnx_instruments.d;
@@ -27,14 +28,13 @@ export default function TableHNX() {
         return className;
     }
 
-    // const clearHightlight = () => {
-    //     let $ = document.querySelectorAll
-    //     $(".table tbody tr td").removeClass('backGroundYellow')
-    //     $(".table tbody tr td").removeClass('backGroundPurple')
-    //     $(".table tbody tr td").removeClass('backGroundBlue')
-    //     $(".table tbody tr td").removeClass('backGroundGreen')
-    //     $(".table tbody tr td").removeClass('backGroundRed')
-    // }
+    const clearHightlight = () => {
+        $(".table tbody tr td").removeClass('backGroundYellow')
+        $(".table tbody tr td").removeClass('backGroundPurple')
+        $(".table tbody tr td").removeClass('backGroundBlue')
+        $(".table tbody tr td").removeClass('backGroundGreen')
+        $(".table tbody tr td").removeClass('backGroundRed')
+    }
 
     const ChangeData = () => {
         const randomIndex = (max, min) => {
@@ -58,27 +58,31 @@ export default function TableHNX() {
                 let offerPrice1 = randomValue(data.ceiling, data.floor)
                 let offerPrice2 = randomValue(data.ceiling, data.floor)
                 let offerPrice3 = randomValue(data.ceiling, data.floor)
-                const Listproperty = [
-                    data.bidPrice3 = bidPrice3,
-                    data.bidPrice2 = bidPrice2,
-                    data.offerPrice1 = offerPrice1,
-                    data.offerPrice2 = offerPrice2,
-                    data.offerPrice3 = offerPrice3
-                ]
-               
+                
+                    
+                
+
+
                 return (
                     data.bidPrice3_ClassHightlight = getHighlight(data.bidPrice3, bidPrice3, data),
                     data.bidPrice2_ClassHightlight = getHighlight(data.bidPrice2, bidPrice2, data),
                     data.offerPrice1_ClassHightlight = getHighlight(data.bidPrice1, offerPrice1, data),
                     data.offerPrice2_ClassHightlight = getHighlight(data.offerPrice2, offerPrice2, data),
-                    data.offerPrice3_ClassHightlight = getHighlight(data.offerPrice3, offerPrice3, data))
+                    data.offerPrice3_ClassHightlight = getHighlight(data.offerPrice3, offerPrice3, data)),
+
+                    data.bidPrice3 = bidPrice3,
+                    data.bidPrice2 = bidPrice2,
+                    data.offerPrice1 = offerPrice1,
+                    data.offerPrice2 = offerPrice2,
+                    data.offerPrice3 = offerPrice3
             } else {
                 return ''
             }
         })
-        // setTimeout(() => {
-        //     clearHightlight()
-        // }, 1000)
+        setTimeout(() => {
+            clearHightlight()
+            console.log('alo')
+        }, 1000)
         setData(get20Data.slice(0, 10))
 
     }
